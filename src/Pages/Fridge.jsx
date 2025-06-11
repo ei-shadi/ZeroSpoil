@@ -1,14 +1,15 @@
 import { Helmet } from "react-helmet-async";
 
-const Home = () => {
+
+const Fridge = () => {
   return (
     <>
       <Helmet>
-        <title>Home - ZeroSpoil</title>
+        <title>Fridge - ZeroSpoil</title>
       </Helmet>
-      <h1>Home</h1>
+      This is Fridge
     </>
   );
 };
 
-export default Home;
+export default Fridge;

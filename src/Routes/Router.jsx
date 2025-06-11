@@ -2,7 +2,11 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/Home";
-
+import Fridge from "../Pages/Fridge";
+import AddFood from "../Pages/AddFood";
+import MyItems from "../Pages/MyItems";
+import Login from "../Pages/Auth/Login";
+import Register from "../Pages/Auth/Register";
 
 
 
@@ -19,6 +23,26 @@ const router = createBrowserRouter([
         path: "/",
         Component: Home,
       },
+      {
+        path: "fridge",
+        Component: Fridge,
+      },
+      {
+        path: "add-food",
+        Component: AddFood
+      },
+      {
+        path: "my-items",
+        Component: MyItems
+      },
+      {
+        path:"auth/login",
+        Component: Login
+      },
+      {
+        path:"auth/register",
+        Component: Register
+      }
     ],
   },
 ]);
