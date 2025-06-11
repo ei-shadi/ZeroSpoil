@@ -2,14 +2,13 @@ import { useState, useRef, useEffect } from "react";
 import logo from "../assets/favicon.png";
 import { Link, NavLink } from "react-router";
 import Btn from "../Utilities/Btn";
-
+import { FaHome, FaSnowflake, FaPlus, FaClipboardList, FaSignInAlt, FaUserPlus } from "react-icons/fa";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef();
 
-
-  // Close menu when clicking outside
+  // Close the menu when a link is clicked or anywhere
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -26,99 +25,77 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMenuOpen]);
 
-
-  // Center Links
+  // Center Links of the navbar For Large Device
   const centerLinks = (
     <ul className="items-center hidden space-x-8 lg:flex">
-      <li>
-        <NavLink
-          to="/"
-          title="Home"
-          className={({ isActive }) =>
-            isActive
-              ? "text-2xl font-extrabold text-[#8338ec] border-b-4 rounded px-4 pb-0.5"
-              : "italic font-semibold hover:text-cyan-400 hover:text-2xl duration-100 hover:border-b-4 rounded text-lg hover:px-3"
-          }
-        >
-          Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/fridge"
-          title="Fridge"
-          className={({ isActive }) =>
-            isActive
-              ? "text-2xl font-extrabold text-[#8338ec] border-b-4 rounded px-4 pb-0.5"
-              : "italic font-semibold hover:text-cyan-400 hover:text-2xl duration-100 hover:border-b-4 rounded text-lg hover:px-3"
-          }
-        >
-          Fridge
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/add-food"
-          title="Add Food"
-          className={({ isActive }) =>
-            isActive
-              ? "text-2xl font-extrabold text-[#8338ec] border-b-4 rounded px-4 pb-0.5"
-              : "italic font-semibold hover:text-cyan-400 hover:text-2xl duration-100 hover:border-b-4 rounded text-lg hover:px-3"
-          }
-        >
-          Add Food
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/my-items"
-          title="My Items"
-          className={({ isActive }) =>
-            isActive
-              ? "text-2xl font-extrabold text-[#8338ec] border-b-4 rounded px-4 pb-0.5"
-              : "italic font-semibold hover:text-cyan-400 hover:text-2xl duration-100 hover:border-b-4 rounded text-lg hover:px-3"
-          }
-        >
-          My Items
-        </NavLink>
-      </li>
+      {[
+        { to: "/", title: "Home", icon: FaHome },
+        { to: "/fridge", title: "Fridge", icon: FaSnowflake },
+        { to: "/add-food", title: "Add Food", icon: FaPlus },
+        { to: "/my-items", title: "My Items", icon: FaClipboardList },
+      ].map(({ to, title, icon: Icon }) => (
+        <li key={to}>
+          <NavLink
+            to={to}
+            title={title}
+            className={({ isActive }) =>
+              `flex items-center gap-2 ${isActive
+                ? "text-2xl font-extrabold text-[#8338ec] border-b-4 rounded px-4 pb-0.5"
+                : "italic font-semibold hover:text-cyan-400 hover:text-2xl duration-100 hover:border-b-4 rounded text-lg hover:px-3"
+              }`
+            }
+          >
+            {({ isActive }) => (
+              <>
+                <Icon className={`text-xl ${isActive ? "text-[#8338ec]" : "text-inherit"}`} />
+                {title}
+              </>
+            )}
+          </NavLink>
+        </li>
+      ))}
     </ul>
   );
-
 
   // Mobile Menu Links
   const mobileMenuLinks = (
     <ul className="text-center space-y-2">
-      {["/", "/fridge", "/add-food", "/my-items", "/auth/login", "/auth/register"].map((path, index) => {
-        const titles = ["Home", "Fridge", "Add Food", "My Items", "Login", "Register"];
-        return (
-          <li key={path}>
-            <NavLink
-              to={path}
-              onClick={() => setIsMenuOpen(false)}
-              className={({ isActive }) =>
-                isActive
-                  ? "text-2xl font-extrabold bg-[#8338ec] text-white py-2 rounded-2xl block w-3/5 mx-auto"
-                  : "italic font-semibold text-cyan-400 text-xl border-b-8 border-t-8 rounded-xl block py-2 bg-[#3d405b]"
-              }
-            >
-              {titles[index]}
-            </NavLink>
-          </li>
-        );
-      })}
+      {[
+        { path: "/", title: "Home", icon: <FaHome /> },
+        { path: "/fridge", title: "Fridge", icon: <FaSnowflake /> },
+        { path: "/add-food", title: "Add Food", icon: <FaPlus /> },
+        { path: "/my-items", title: "My Items", icon: <FaClipboardList /> },
+        { path: "/auth/login", title: "Login", icon: <FaSignInAlt /> },
+        { path: "/auth/register", title: "Register", icon: <FaUserPlus /> },
+      ].map(({ path, title, icon }) => (
+        <li key={path}>
+          <NavLink
+            to={path}
+            onClick={() => setIsMenuOpen(false)}
+            className={({ isActive }) =>
+              `flex items-center gap-2 justify-center ${isActive
+                ? "text-2xl font-extrabold bg-[#8338ec] text-white py-2 rounded-2xl w-3/5 mx-auto"
+                : "italic font-semibold text-cyan-400 text-xl border-b-8 border-t-8 rounded-xl py-2 bg-[#3d405b]  mx-auto"
+              }`
+            }
+          >
+            {icon}
+            {title}
+          </NavLink>
+        </li>
+      ))}
     </ul>
   );
-
 
   return (
     <div className="px-4 py-1 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
       <div className="relative flex items-center justify-between">
-
         {/* Start */}
         <Link to="/" className="flex items-center">
           <img className="w-20" src={logo} alt="logo" />
-          <h2 className="text-2xl md:text-3xl font-bold">ZeroSpoil</h2>
+          <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#00D3F2] to-[#8338ec] text-transparent bg-clip-text">
+            ZeroSpoil
+          </h2>
         </Link>
 
         {/* Center */}
@@ -126,11 +103,9 @@ const Navbar = () => {
 
         {/* End */}
         <div className="lg:flex gap-5 items-center hidden">
-          {/* Login BTN */}
           <Link to="/auth/login">
             <Btn name="Login" />
           </Link>
-          {/* Register BTN */}
           <Link to="/auth/register">
             <Btn name="Register" />
           </Link>
@@ -180,8 +155,8 @@ const Navbar = () => {
                       <path
                         fill="currentColor"
                         d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6 5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3-6.3,6.3 
-                        c-0.4,0.4-0.4,1,0,1.4C4.5,19.9 4.7,20 5,20s0.5-0.1 0.7-0.3l6.3-6.3 6.3,6.3c0.2,0.2 0.5,0.3 0.7,0.3s0.5-0.1 
-                        0.7-0.3c0.4-0.4 0.4-1 0-1.4L13.4,12 19.7,5.7C20.1,5.3 20.1,4.7 19.7,4.3z"
+                          c-0.4,0.4-0.4,1,0,1.4C4.5,19.9 4.7,20 5,20s0.5-0.1 0.7-0.3l6.3-6.3 6.3,6.3c0.2,0.2 0.5,0.3 0.7,0.3s0.5-0.1 
+                          0.7-0.3c0.4-0.4 0.4-1 0-1.4L13.4,12 19.7,5.7C20.1,5.3 20.1,4.7 19.7,4.3z"
                       />
                     </svg>
                   </button>

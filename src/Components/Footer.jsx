@@ -17,7 +17,7 @@ const Footer = () => {
             className="inline-flex items-center"
           >
             <img src={logo} alt=""  className="w-20"/>
-            <h2 className=" text-4xl font-bold tracking-wide text-gray-800">
+            <h2 className=" text-4xl font-bold tracking-wide bg-gradient-to-r from-[#00D3F2] to-[#8338ec] text-transparent bg-clip-text">
               ZeroSpoil
             </h2>
           </Link>
@@ -206,7 +206,7 @@ const Footer = () => {
       </div>
       <div className="flex flex-col justify-between pt-5 pb-10 border-t sm:flex-row ">
         <p className="text-sm text-gray-600 inline-flex justify-center">
-          © Copyright 2020 <h2 className="pl-1">ZeroSpoil</h2>. All rights reserved.
+          © Copyright 2020 <span className="pl-1 my-font">ZeroSpoil</span>. All rights reserved.
         </p>
         <div className="">
           <SocialBTN />

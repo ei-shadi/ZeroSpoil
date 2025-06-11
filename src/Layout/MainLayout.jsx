@@ -1,10 +1,14 @@
 import { Outlet } from "react-router";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import ScrollToTop from "../Utilities/ScrollToTop";
+
 
 const MainLayout = () => {
   return (
     <div>
+      <ScrollToTop />
+
       <header className="bg-[#f4f1de] h-[88px]">
         <Navbar />
       </header>
@@ -15,7 +19,7 @@ const MainLayout = () => {
       </main>
 
 
-      <footer className="bg-[#81b29a] ">
+      <footer className="bg-[#f2cc8f] ">
         <Footer />
       </footer>
     </div>
