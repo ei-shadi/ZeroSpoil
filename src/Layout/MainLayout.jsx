@@ -5,17 +5,17 @@ import Footer from "../Components/Footer";
 const MainLayout = () => {
   return (
     <div>
-      <header className="bg-[#f4f1de]">
+      <header className="bg-[#f4f1de] h-[88px]">
         <Navbar />
       </header>
 
 
-      <main>
+      <main className="min-h-screen">
         <Outlet />
       </main>
 
 
-      <footer>
+      <footer className="bg-[#81b29a] ">
         <Footer />
       </footer>
     </div>
