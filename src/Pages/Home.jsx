@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import Slider from "../Components/Home/Slider";
 
 const Home = () => {
   return (
@@ -6,7 +7,10 @@ const Home = () => {
       <Helmet>
         <title>Home - ZeroSpoil</title>
       </Helmet>
-      <h1>Home</h1>
+      {/* Slider Section */}
+      <section>
+      <Slider />
+      </section>
     </>
   );
 };

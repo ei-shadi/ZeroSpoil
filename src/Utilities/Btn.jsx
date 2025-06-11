@@ -12,7 +12,7 @@ const Button = ({name, onClick}) => {
 
 const StyledWrapper = styled.div`
   button {
-    width: 8em;
+    width: fit-content;
     position: relative;
     height: 2.5em;
     border: 3px ridge #149CEA;
@@ -24,6 +24,7 @@ const StyledWrapper = styled.div`
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+    padding: 0 2em;
   }
 
   button::after {
