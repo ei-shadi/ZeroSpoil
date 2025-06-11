@@ -1,4 +1,3 @@
-
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/Home";
@@ -7,7 +6,8 @@ import AddFood from "../Pages/AddFood";
 import MyItems from "../Pages/MyItems";
 import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Register";
-
+import Loader from "../Utilities/Loader";
+import Error from "../Pages/Error";
 
 
 
@@ -16,8 +16,8 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    hydrateFallbackElement: <p>Loading...</p>,
-    errorElement: <p>Error 404 Not Found</p>,
+    hydrateFallbackElement: <Loader />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
