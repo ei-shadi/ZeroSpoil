@@ -14,6 +14,10 @@ const LoginForm = () => {
 
   const handleLogin = e => {
     e.preventDefault();
+    const form = e.target
+    const formData = new FormData(form)
+    const userData = Object.fromEntries(formData.entries())
+    console.log(userData);
   }
 
 
