@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Milk",
+    "category": "Dairy",
+    "quantity": "1 liter",
+    "expiryDate": "2025-07-25",
+    "image": "https://i.ibb.co/tw26WW1y/Milk.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Lettuce",
+    "category": "Vegetable",
+    "quantity": "2 heads",
+    "expiryDate": "2025-07-26",
+    "image": "https://i.ibb.co/pTnyGxd/Lettuce.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Yogurt",
+    "category": "Dairy",
+    "quantity": "500g",
+    "expiryDate": "2025-07-27",
+    "image": "https://i.ibb.co/PsC042Nq/Yogurt.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Bread",
+    "category": "Bakery",
+    "quantity": "1 loaf",
+    "expiryDate": "2025-07-28",
+    "image": "https://i.ibb.co/gLnkdGVs/Bread.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Chicken Breast",
+    "category": "Meat",
+    "quantity": "500g",
+    "expiryDate": "2025-07-29",
+    "image": "https://i.ibb.co/pBzS2V1N/Chicken-Breast.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Strawberries",
+    "category": "Fruit",
+    "quantity": "1 box",
+    "expiryDate": "2025-07-30",
+    "image": "https://i.ibb.co/Ld6sWGk3/Strawberries.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Tomatoes",
+    "category": "Vegetable",
+    "quantity": "1 kg",
+    "expiryDate": "2025-08-05",
+    "image": "https://i.ibb.co/C3RbLWGG/Tomatoes.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Cheddar Cheese",
+    "category": "Dairy",
+    "quantity": "250g",
+    "expiryDate": "2025-08-15",
+    "image": "https://i.ibb.co/jZTRDt4h/Cheddar-Cheese.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Frozen Peas",
+    "category": "Frozen",
+    "quantity": "1 pack",
+    "expiryDate": "2025-08-30",
+    "image": "https://i.ibb.co/35qnLYhy/Frozen-Peas.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Bananas",
+    "category": "Fruit",
+    "quantity": "6 pcs",
+    "expiryDate": "2025-09-02",
+    "image": "https://i.ibb.co/B5DcMrF1/Bananas.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Almond Milk",
+    "category": "Dairy Alternatives",
+    "quantity": "1 liter",
+    "expiryDate": "2025-09-10",
+    "image": "https://i.ibb.co/XfRGzWkM/Almond-Milk.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Pasta",
+    "category": "Grains",
+    "quantity": "500g",
+    "expiryDate": "2025-09-22",
+    "image": "https://i.ibb.co/G3BqvvmM/Pasta.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Eggs",
+    "category": "Poultry",
+    "quantity": "12 pcs",
+    "expiryDate": "2025-10-01",
+    "image": "https://i.ibb.co/j9Ws1kF4/Eggs.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Butter",
+    "category": "Dairy",
+    "quantity": "200g",
+    "expiryDate": "2025-10-10",
+    "image": "https://i.ibb.co/wFYRWyZT/Butter.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Rice",
+    "category": "Grains",
+    "quantity": "1 kg",
+    "expiryDate": "2025-10-28",
+    "image": "https://i.ibb.co/G41mYbDs/Rice.png"
+  }
+]

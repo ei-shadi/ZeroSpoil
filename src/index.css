@@ -18,25 +18,30 @@ button,
 
 [data-theme="light"] {
   .nav-bg {
-    background-color: #f4f1de;
+    background-color: #f4f1de8D;
+
   }
 
   .footer-bg {
     background-color: #f2cc8f;
   }
+
+  .form-bg{
+    background-color: aqua;
+  }
 }
 
 [data-theme="dark"] {
-  body{
-    background-color: black;
-  }
-  .nav-bg {
+  body {
     background-color: black;
   }
 
+  .nav-bg {
+    background-color: #0000004D;
+  }
+
   .nav-links-bg {
-    background-color: #f4f1de;
-    color: black;
+    color: #fff;
   }
 
   .footer-bg {

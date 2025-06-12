@@ -46,7 +46,7 @@ const Slider = () => {
       {slides.map(slide => (
         <SwiperSlide key={slide.id}>
           <div
-            className="h-[650px]  w-full bg-cover bg-center relative flex items-center justify-center transition-opacity duration-1000"
+            className="h-[750px]  w-full bg-cover bg-center relative flex items-center justify-center transition-opacity duration-1000"
             style={{ backgroundImage: `url(${slide.imageUrl})` }}
           >
             <div className="absolute inset-0 bg-black/50"></div>

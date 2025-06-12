@@ -32,8 +32,8 @@ const Navbar = () => {
 
   // Center Links of the navbar For Large Device
   const centerLinks = (
-    <div className="lg:flex hidden nav-links-bg px-20 py-3 rounded-full">
-      <ul className="items-center hidden space-x-8 lg:flex">
+    <div className="lg:flex hidden nav-links-bg">
+      <ul className="items-center hidden space-x-10 lg:flex">
       {[
         { to: "/", title: "Home", icon: FaHome },
         { to: "/fridge", title: "Fridge", icon: FaSnowflake },
@@ -95,7 +95,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="nav-bg">
+    <div className="nav-bg fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-w shadow-lg transition duration-300">
       <div className="px-4 py-1 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           {/* Start */}
@@ -124,7 +124,7 @@ const Navbar = () => {
 
           {/* Mobile menu */}
           <div className="lg:hidden flex items-center gap-3">
-            <ThemeBtn />
+            
             <button
               title="Open Menu"
               className="p-2 transition rounded hover:bg-gray-100"
@@ -140,7 +140,7 @@ const Navbar = () => {
             {/* Menu */}
             {isMenuOpen && (
               <div className="absolute top-14 left-0 w-full z-50" ref={menuRef}>
-                <div className="p-5 bg-[#f4f1de] border rounded shadow-sm">
+                <div className="p-5 nav-bg border rounded shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <Link to="/" className="inline-flex items-center">
                       <svg
@@ -158,6 +158,7 @@ const Navbar = () => {
                         Company
                       </span>
                     </Link>
+                    <ThemeBtn />
                     <button
                       title="Close Menu"
                       className="p-2 -mt-2 -mr-2 rounded hover:bg-gray-200"

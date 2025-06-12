@@ -4,8 +4,8 @@ import Home from "../Pages/Home";
 import Fridge from "../Pages/Fridge";
 import AddFood from "../Pages/AddFood";
 import MyItems from "../Pages/MyItems";
-import Login from "../Pages/Auth/Login";
-import Register from "../Pages/Auth/Register";
+import Login from "../Pages/Auth/LoginForm";
+import Register from "../Pages/Auth/RegisterForm";
 import Loader from "../Utilities/Loader";
 import Error from "../Pages/Error";
 
