@@ -1,7 +1,8 @@
 <div align="center">
   <h1>
-    <a href="https://eis-green-verse.netlify.app/" target="_blank" rel="noopener noreferrer">
-      🥦 ZeroSpoil
+    <a href="https://zerospoil.netlify.app/" target="_blank" rel="noopener noreferrer">
+    <img src="https://i.ibb.co/0ymYkKTF/Logo.png" alt="ZeroSpoil Logo" style="width: 40px; height: 40px;" />
+       ZeroSpoil
     </a>
   </h1>
   <p><strong>Track your food. Waste less. Save more.</strong></p>
@@ -42,6 +43,7 @@
 | <a href="https://sweetalert2.github.io/" target="_blank">🍬 SweetAlert2</a> | Alert Popups |
 | <a href="https://react-icons.github.io/react-icons/" target="_blank">🎨 React Icons</a> | Iconography |
 | <a href="https://github.com/staylor/react-helmet-async" target="_blank">🪖 Helmet Async</a> | SEO / Meta Tags |
+| <a href="https://www.npmjs.com/package/framer-motion" target="_blank">☠️ Framer Motion</a> | SEO / Meta Tags |
 
 ---
 
@@ -49,7 +51,7 @@
 
 🎯 **Try It Live**:  
 👉 <h1>
-  <a href="https://eis-green-verse.netlify.app/" target="_blank" rel="noopener noreferrer">
+  <a href="https://zerospoil.netlify.app/" target="_blank" rel="noopener noreferrer">
     Open ZeroSpoil Now...
   </a>
 </h1>

@@ -1,9 +1,8 @@
-import { useState, useRef, useEffect, useContext } from "react";
-import logo from "../assets/favicon.png";
+import { useState, useRef, useEffect } from "react";
+import logo from "../assets/Logo.png";
 import { Link, NavLink } from "react-router";
 import Btn from "../Utilities/Btn";
 import { FaHome, FaSnowflake, FaPlus, FaClipboardList, FaSignInAlt, FaUserPlus } from "react-icons/fa";
-// import { ThemeContext } from "../Context/ThemeContext";
 import ThemeBtn from "../Utilities/ThemeBtn";
 
 
@@ -12,7 +11,6 @@ import ThemeBtn from "../Utilities/ThemeBtn";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef();
-  // const { theme, toggleTheme } = useContext(ThemeContext);
 
 
   // Close the menu when a link is clicked or anywhere

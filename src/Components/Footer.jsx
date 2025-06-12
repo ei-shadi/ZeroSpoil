@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import logo from "../assets/favicon.png";
+import logo from "../assets/Logo.png";
 import SocialBTN from "../Utilities/SocialBTN";
 
 
@@ -16,7 +16,7 @@ const Footer = () => {
               title="Company"
               className="inline-flex items-center"
             >
-              <img src={logo} alt="" className="w-20" />
+              <img src={logo} alt="" className="w-28" />
               <h2 className=" text-4xl font-bold tracking-wide bg-gradient-to-r from-[#00D3F2] to-[#8338ec] text-transparent bg-clip-text">
                 ZeroSpoil
               </h2>
