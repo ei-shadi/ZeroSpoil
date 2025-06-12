@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-
 @import "tailwindcss";
 @plugin "daisyui";
 
@@ -14,4 +13,33 @@ h2,
 button,
 .my-font {
   font-family: 'Bespoke Stencil', sans-serif;
+}
+
+
+[data-theme="light"] {
+  .nav-bg {
+    background-color: #f4f1de;
+  }
+
+  .footer-bg {
+    background-color: #f2cc8f;
+  }
+}
+
+[data-theme="dark"] {
+  body{
+    background-color: black;
+  }
+  .nav-bg {
+    background-color: black;
+  }
+
+  .nav-links-bg {
+    background-color: #f4f1de;
+    color: black;
+  }
+
+  .footer-bg {
+    background-color: #f2cc8f;
+  }
 }

@@ -9,7 +9,7 @@ const MainLayout = () => {
     <div>
       <ScrollToTop />
 
-      <header className="bg-[#f4f1de] h-[88px]">
+      <header className="h-[88px]">
         <Navbar />
       </header>
 
@@ -19,7 +19,7 @@ const MainLayout = () => {
       </main>
 
 
-      <footer className="bg-[#f2cc8f] ">
+      <footer>
         <Footer />
       </footer>
     </div>

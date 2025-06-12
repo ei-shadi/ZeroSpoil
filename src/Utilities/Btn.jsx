@@ -24,7 +24,7 @@ const StyledWrapper = styled.div`
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    padding: 0 2em;
+    padding: 0 1.5em;
   }
 
   button::after {
