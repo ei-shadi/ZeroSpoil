@@ -8,6 +8,7 @@ import Login from "../Pages/Auth/LoginForm";
 import Register from "../Pages/Auth/RegisterForm";
 import Loader from "../Utilities/Loader";
 import Error from "../Pages/Error";
+import PrivateRoute from "../Provider/PrivateRoute";
 
 
 
@@ -29,18 +30,22 @@ const router = createBrowserRouter([
       },
       {
         path: "add-food",
-        Component: AddFood
+        element: <PrivateRoute>
+          <AddFood />
+        </PrivateRoute>
       },
       {
         path: "my-items",
-        Component: MyItems
+        element: <PrivateRoute>
+          <MyItems />
+        </PrivateRoute>
       },
       {
-        path:"auth/login",
+        path: "auth/login",
         Component: Login
       },
       {
-        path:"auth/register",
+        path: "auth/register",
         Component: Register
       }
     ],

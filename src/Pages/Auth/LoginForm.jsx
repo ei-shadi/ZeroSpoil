@@ -1,15 +1,20 @@
-import React from 'react';
-import { FaUserCircle, FaGoogle, FaEnvelope, FaLock } from 'react-icons/fa';
-import { Link } from 'react-router';
-
-
-
-
-
+import { useContext, useState } from 'react';
+import { FaUserCircle, FaGoogle, FaEnvelope, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
+import { Link, useLocation, useNavigate } from 'react-router';
+import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
+import toast from 'react-hot-toast';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth } from '../../Firebase/Firebase.config';
 
 
 
 const LoginForm = () => {
+  const { logInUser, setUser } = useContext(AuthContext);
+  const provider = new GoogleAuthProvider();
+  const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
 
   const handleLogin = e => {
@@ -17,8 +22,58 @@ const LoginForm = () => {
     const form = e.target
     const formData = new FormData(form)
     const userData = Object.fromEntries(formData.entries())
-    console.log(userData);
+    const { email, password } = userData
+
+
+    // Login User
+    logInUser(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        setUser(user);
+        console.log(user.displayName);
+        Swal.fire({
+          icon: "success",
+          title: "Logged in successfully!",
+          html: `<span class="font-bold text-green-500 text-2xl">Welcome <span class="text-[#00D3F2] font-bold text-2xl">${user.email}</span></span>`,
+          showConfirmButton: true,
+          confirmButtonText: "Continue",
+          timer: 2000,
+          timerProgressBar: true,
+        });
+        navigate(`${location.state ? location.state : "/"}`);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+      });
   }
+
+
+
+  // Login with Google
+  const handleGoogleLogin = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        setUser(user);
+        Swal.fire({
+          icon: "success",
+          title: "Logged in successfully with Google!",
+          html: `<span class="font-bold text-green-500 text-2xl">Welcome <span class="text-amber-600 font-bold text-2xl">${user.displayName}</span></span>`,
+          showConfirmButton: true,
+          confirmButtonText: "Continue",
+          timer: 2000,
+          timerProgressBar: true,
+        });
+        navigate(`${location.state ? location.state : "/"}`);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+      });
+  };
 
 
 
@@ -54,13 +109,23 @@ const LoginForm = () => {
               </label>
               <a href="/forgot-password" className="text-sm text-[#8338EC] hover:underline">Forgot Password?</a>
             </div>
-            <input
-              type="password"
-              name='password'
-              className="mt-1 w-full p-3 border border-gray-300 rounded-xl focus:bg-black text-[#00D3F2] focus:text-white focus:outline-none focus:ring-2 focus:ring-[#8338EC]"
-              placeholder="••••••••"
-              required
-            />
+
+            <div className='relative'>
+              <input
+                type={showPassword ? "text" : "password"}
+                name='password'
+                className="mt-1 w-full p-3 border border-gray-300 rounded-xl focus:bg-black text-[#00D3F2] focus:text-white focus:outline-none focus:ring-2 focus:ring-[#8338EC]"
+                placeholder="••••••••"
+                required
+              />
+              <button
+                type="button"
+                className="absolute top-4 right-3 cursor-pointer bg-[#8338ec] p-1 rounded-full text-white"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <FaEye /> : <FaEyeSlash />}
+              </button>
+            </div>
           </div>
 
           <button
@@ -72,7 +137,9 @@ const LoginForm = () => {
         </form>
 
         <div className="mt-4">
-          <button className="w-full flex items-center justify-center gap-3 bg-red-500 hover:bg-[#8338ec] md:text-xl hover:scale-110 cursor-pointer text-white font-semibold py-3 rounded-xl transition duration-200 mt-2">
+          <button
+            onClick={handleGoogleLogin}
+            className="w-full flex items-center justify-center gap-3 bg-red-500 hover:bg-[#8338ec] md:text-xl hover:scale-110 cursor-pointer text-white font-semibold py-3 rounded-xl transition duration-200 mt-2">
             <FaGoogle className="text-xl" />
             Sign in with Google
           </button>

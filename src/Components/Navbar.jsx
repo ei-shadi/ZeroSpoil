@@ -1,16 +1,20 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import logo from "../assets/Logo.png";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import Btn from "../Utilities/Btn";
 import { FaHome, FaSnowflake, FaPlus, FaClipboardList, FaSignInAlt, FaUserPlus } from "react-icons/fa";
 import ThemeBtn from "../Utilities/ThemeBtn";
-
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef();
+  const { user, logOutUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
 
   // Close the menu when a link is clicked or anywhere
@@ -34,33 +38,34 @@ const Navbar = () => {
   const centerLinks = (
     <div className="lg:flex hidden nav-links-bg">
       <ul className="items-center hidden space-x-10 lg:flex">
-      {[
-        { to: "/", title: "Home", icon: FaHome },
-        { to: "/fridge", title: "Fridge", icon: FaSnowflake },
-        { to: "/add-food", title: "Add Food", icon: FaPlus },
-        { to: "/my-items", title: "My Items", icon: FaClipboardList },
-      ].map(({ to, title, icon: Icon }) => (
-        <li key={to}>
-          <NavLink
-            to={to}
-            title={title}
-            className={({ isActive }) =>
-              `flex items-center gap-2 ${isActive
-                ? "text-2xl font-extrabold text-[#8338ec] border-b-4 rounded px-4 pb-0.5"
-                : "italic font-semibold hover:text-cyan-400 hover:text-2xl duration-100 hover:border-b-4 rounded text-lg hover:px-3"
-              }`
-            }
-          >
-            {({ isActive }) => (
-              <>
-                <Icon className={`text-xl ${isActive ? "text-[#8338ec]" : "text-inherit"}`} />
-                {title}
-              </>
-            )}
-          </NavLink>
-        </li>
-      ))}
-    </ul>
+
+        {[
+          { to: "/", title: "Home", icon: FaHome },
+          { to: "/fridge", title: "Fridge", icon: FaSnowflake },
+          user && { to: "/add-food", title: "Add Food", icon: FaPlus },
+          user && { to: "/my-items", title: "My Items", icon: FaClipboardList },
+        ].filter(Boolean).map(({ to, title, icon: Icon }) => (
+          <li key={to}>
+            <NavLink
+              to={to}
+              title={title}
+              className={({ isActive }) =>
+                `flex items-center gap-2 ${isActive
+                  ? "text-2xl font-extrabold text-[#8338ec] border-b-4 rounded px-4 pb-0.5"
+                  : "italic font-semibold hover:text-cyan-400 hover:text-2xl duration-100 hover:border-b-4 rounded text-lg hover:px-3"
+                }`
+              }
+            >
+              {({ isActive }) => (
+                <>
+                  <Icon className={`text-xl ${isActive ? "text-[#8338ec]" : "text-inherit"}`} />
+                  {title}
+                </>
+              )}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 
@@ -94,6 +99,25 @@ const Navbar = () => {
     </ul>
   );
 
+  // Handle Logout
+    const handleLogout = () => {
+    logOutUser()
+      .then(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Logout successfully!',
+          showConfirmButton: true,
+          confirmButtonText: 'Continue',
+          timer: 2000,
+          timerProgressBar: true,
+        });
+        navigate('/');
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
   return (
     <div className="nav-bg fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-w shadow-lg transition duration-300">
       <div className="px-4 py-1 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
@@ -114,17 +138,25 @@ const Navbar = () => {
             {/* Theme Btn */}
             <ThemeBtn />
             {/* Login & Register Btn */}
-            <Link to="/auth/login">
-              <Btn name="Login" />
-            </Link>
-            <Link to="/auth/register">
-              <Btn name="Register" />
-            </Link>
+            {
+              user ? <div>
+                <Btn name="Logout" onClick={handleLogout} />
+              </div>
+                : <div className="lg:flex gap-5 items-center hidden">
+                  <Link to="/auth/login">
+                    <Btn name="Login" />
+                  </Link>
+                  <Link to="/auth/register">
+                    <Btn name="Register" />
+                  </Link>
+                </div>
+            }
+
           </div>
 
           {/* Mobile menu */}
           <div className="lg:hidden flex items-center gap-3">
-            
+
             <button
               title="Open Menu"
               className="p-2 transition rounded hover:bg-gray-100"
