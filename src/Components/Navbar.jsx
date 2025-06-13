@@ -7,6 +7,7 @@ import ThemeBtn from "../Utilities/ThemeBtn";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import { Tooltip } from "react-tooltip";
 
 
 
@@ -16,6 +17,7 @@ const Navbar = () => {
   const { user, logOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  console.log(user);
 
   // Close the menu when a link is clicked or anywhere
   useEffect(() => {
@@ -71,7 +73,7 @@ const Navbar = () => {
 
   // Mobile Menu Links
   const mobileMenuLinks = (
-    <ul className="text-center space-y-2">
+    <ul className="text-center space-y-2 mt-10">
       {[
         { path: "/", title: "Home", icon: <FaHome /> },
         { path: "/fridge", title: "Fridge", icon: <FaSnowflake /> },
@@ -100,7 +102,7 @@ const Navbar = () => {
   );
 
   // Handle Logout
-    const handleLogout = () => {
+  const handleLogout = () => {
     logOutUser()
       .then(() => {
         Swal.fire({
@@ -139,9 +141,31 @@ const Navbar = () => {
             <ThemeBtn />
             {/* Login & Register Btn */}
             {
-              user ? <div>
-                <Btn name="Logout" onClick={handleLogout} />
-              </div>
+              user ?
+                <div className="flex items-center gap-5">
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    className="flex items-center justify-center w-12 h-12 rounded-full border border-gray-300 hover:ring-4 hover:ring-[#00D3F2] transition duration-200 cursor-pointer hover:scale-110"
+                  >
+                    <div className="w-full h-12 rounded-full overflow-hidden">
+                      <img
+                        data-tooltip-id="my-tooltip-inline"
+                        data-tooltip-content={user?.displayName || user?.email}
+                        alt="User Avatar"
+                        src={user?.photoURL || "https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"}
+                        className="w-full h-full object-cover rounded-full"
+                      />
+                    </div>
+                    <Tooltip
+                      id="my-tooltip-inline"
+                      place="bottom"
+                      effect="solid"
+                      style={{ color: '#00D3F2', fontSize: '1rem' }}
+                    />
+                  </div>
+                  <Btn name="Logout" onClick={handleLogout} />
+                </div>
                 : <div className="lg:flex gap-5 items-center hidden">
                   <Link to="/auth/login">
                     <Btn name="Login" />
@@ -151,7 +175,6 @@ const Navbar = () => {
                   </Link>
                 </div>
             }
-
           </div>
 
           {/* Mobile menu */}
@@ -173,44 +196,48 @@ const Navbar = () => {
             {isMenuOpen && (
               <div className="absolute top-14 left-0 w-full z-50" ref={menuRef}>
                 <div className="p-5 nav-bg border rounded shadow-sm">
-                  <div className="flex items-center justify-between mb-4">
-                    <Link to="/" className="inline-flex items-center">
-                      <svg
-                        className="w-8 text-purple-500"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                      >
-                        <rect x="3" y="1" width="7" height="12" />
-                        <rect x="3" y="17" width="7" height="6" />
-                        <rect x="14" y="1" width="7" height="6" />
-                        <rect x="14" y="11" width="7" height="12" />
-                      </svg>
-                      <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                        Company
-                      </span>
-                    </Link>
-                    <ThemeBtn />
+                  <div className="flex items-center justify-between mb-4 relative">
+                    {/* Close button - left side */}
                     <button
                       title="Close Menu"
-                      className="p-2 -mt-2 -mr-2 rounded hover:bg-gray-200"
+                      className="p-2 -mt-2 -ml-2 rounded hover:bg- absolute right-0"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
+                      <svg className="w-6 bg-[#8338ec] rounded-full p-1 text-[#00D3F2]" viewBox="0 0 24 24">
                         <path
                           fill="currentColor"
-                          d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6 5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3-6.3,6.3 
-                          c-0.4,0.4-0.4,1,0,1.4C4.5,19.9 4.7,20 5,20s0.5-0.1 0.7-0.3l6.3-6.3 6.3,6.3c0.2,0.2 0.5,0.3 0.7,0.3s0.5-0.1 
-                          0.7-0.3c0.4-0.4 0.4-1 0-1.4L13.4,12 19.7,5.7C20.1,5.3 20.1,4.7 19.7,4.3z"
+                          d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6 5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9 4.7,20 5,20s0.5-0.1 0.7-0.3l6.3-6.3 6.3,6.3c0.2,0.2 0.5,0.3 0.7,0.3s0.5-0.1 0.7-0.3c0.4-0.4 0.4-1 0-1.4L13.4,12 19.7,5.7C20.1,5.3 20.1,4.7 19.7,4.3z"
                         />
                       </svg>
                     </button>
+
+
+                    {/* Centered avatar */}
+                    {user && (
+                      <div className="flex flex-col items-center gap-2 mx-auto">
+                        <img
+                          src={user?.photoURL || "https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"}
+                          alt="User Avatar"
+                          className="w-16 h-16 object-cover rounded-full border-2 border-green-500"
+                        />
+                        <p className="font-semibold">{user?.displayName || user?.email}</p>
+                      </div>
+                    )}
+
+                    {/* Right side theme toggle */}
+                    <div className="absolute left-0">
+                      <ThemeBtn />
+                    </div>
                   </div>
+
+                  {/* Mobile menu links */}
                   {mobileMenuLinks}
                 </div>
               </div>
             )}
+
           </div>
+          
         </div>
       </div>
     </div>

@@ -47,7 +47,7 @@ const Loader = () => {
           </div>
           <div className="spoke" />
         </div>
-        <p className="loading-text my-font">Please wait a moment...</p>
+        <p className=" mt-4 text-2xl md:text-4xl text-white text-center my-font">Please wait a moment...</p>
       </div>
     </StyledWrapper>
   );
@@ -113,13 +113,6 @@ const StyledWrapper = styled.div`
     height: 100vh;
   }
 
-  .loading-text {
-    margin-top: 2rem;
-    font-size: 2.5rem;
-    color: white;
-    font-weight: 800;
-    text-align: center;
-  }
 
   .wheel-and-hamster {
     --dur: 1s;
