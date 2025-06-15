@@ -9,6 +9,8 @@ import Register from "../Pages/Auth/RegisterForm";
 import Loader from "../Utilities/Loader";
 import Error from "../Pages/Error";
 import PrivateRoute from "../Provider/PrivateRoute";
+import FoodDetails from "../Components/FoodDetails";
+import axios from "axios";
 
 
 
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
-        path: "/",
+        index: true,
         Component: Home,
       },
       {

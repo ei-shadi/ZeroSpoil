@@ -1,9 +1,9 @@
 import { Link } from 'react-router';
 import Button from '../../Utilities/Btn';
 
-const FoodCard = ({ foodsData }) => {
+const ExpiredFood = ({ expiredFoodsData }) => {
 
-  const { name, category, quantity, expiryDate, image, _id } = foodsData;
+  const { name, category, quantity, expiryDate, image, _id } = expiredFoodsData;
 
   
   return (
@@ -21,10 +21,8 @@ const FoodCard = ({ foodsData }) => {
           <p className="text-lg font-semibold text-[#e07a5f] mb-1"><span className='text-white'>Quantity : </span>{quantity}</p>
           <p className="text-lg font-semibold text-[#e07a5f] mb-1 pb-2 border-b-2"><span className='text-white'>Expires : </span>{expiryDate}</p>
 
-          <div className='flex justify-center mt-6'>
-            <Link to={`/food-details/${_id}`}>
-              <Button name="See Details" />
-            </Link>
+          <div className='mt-8'>
+            <h2 className='text-2xl md:text-3xl text-center font-semibold mb-5 bg-red-600 text-white py-2 rounded-full hover:bg-white hover:text-red-600 hover:cursor-pointer'>Expired</h2>
           </div>
         </div>
       </div>
@@ -32,4 +30,4 @@ const FoodCard = ({ foodsData }) => {
   );
 };
 
-export default FoodCard;
+export default ExpiredFood;

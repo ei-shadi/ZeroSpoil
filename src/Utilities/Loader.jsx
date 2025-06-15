@@ -47,7 +47,7 @@ const Loader = () => {
           </div>
           <div className="spoke" />
         </div>
-        <p className=" mt-4 text-2xl md:text-4xl text-white text-center my-font">Please wait a moment...</p>
+        <p className=" mt-4 text-2xl md:text-4xl text-[#00D3F2] text-center my-font">Please wait a moment...</p>
       </div>
     </StyledWrapper>
   );
@@ -57,7 +57,9 @@ const StyledWrapper = styled.div`
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: linear-gradient(135deg, #1e3c72, #2a5298, #6a11cb);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
   overflow: hidden;
 
   .floating-orbs {

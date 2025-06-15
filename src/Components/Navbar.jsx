@@ -17,8 +17,6 @@ const Navbar = () => {
   const { user, logOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  console.log(user);
-
   // Close the menu when a link is clicked or anywhere
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -122,7 +120,7 @@ const Navbar = () => {
 
   return (
     <div className="nav-bg fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-w shadow-lg transition duration-300">
-      <div className="px-4 py-1 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
+      <div className="px-4 py-1 mx-auto sm:max-w-xl md:max-w-full lg:w-10/12 md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           {/* Start */}
           <Link to="/" className="flex items-center">

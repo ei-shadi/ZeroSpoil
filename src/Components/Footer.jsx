@@ -7,7 +7,7 @@ import SocialBTN from "../Utilities/SocialBTN";
 const Footer = () => {
   return (
     <div className="footer-bg">
-      <div className="px-5 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div className="px-5 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:w-10/12 md:px-24 lg:px-8">
         <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
           <div className=" lg:col-span-2 text-center lg:text-left">
             <Link
