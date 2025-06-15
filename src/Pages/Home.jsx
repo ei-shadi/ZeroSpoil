@@ -4,6 +4,8 @@ import FoodCard from "../Components/Home/FoodCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ExpiredFood from "../Components/Home/ExpiredFood";
+import FreshFoodTips from "../Components/Home/FreeshFoodTips";
+import DonateFoodSection from "../Components/Home/DonateFood";
 
 
 
@@ -43,12 +45,14 @@ const Home = () => {
       <Helmet>
         <title>Home - ZeroSpoil</title>
       </Helmet>
+
       {/* Slider Section */}
-      <section className="pb-20">
+      <section className="mb-20">
         <Slider />
       </section>
+
       {/* Upcoming Expiry Food Card Section */}
-      <section className="pb-20 lg:w-7/12 mx-auto">
+      <section className="lg:w-7/12 mx-auto mb-20">
         <h1 className="text-4xl w-3/4 mx-auto md:text-5xl text-center mb-10 md:mb-14">Upcoming Expiry Food</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -57,8 +61,9 @@ const Home = () => {
           }
         </div>
       </section>
+
       {/* Already Expired Food Card Section */}
-      <section className="pb-20 lg:w-7/12 mx-auto">
+      <section className="lg:w-7/12 mx-auto mb-20">
         <h1 className="text-4xl w-3/4 mx-auto md:text-5xl text-center mb-10 md:mb-14">Expired Food</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -67,7 +72,21 @@ const Home = () => {
           }
         </div>
       </section>
+
+      {/* Donate Food Section */}
+      <section className="mx-auto mb-20">
+        <h1 className="text-4xl w-3/4 mx-auto md:text-5xl text-center mb-10 md:mb-14">Donate Food</h1>
+        <DonateFoodSection />
+      </section>
+
+      {/* Tips For Foods Section */}
+      <section className="lg:w-7/12 mx-auto mb-20">
+        <FreshFoodTips expiredFoodsData={expiredFoodsData}/>
+      </section>
+
+      
     </>
+
   );
 };
 

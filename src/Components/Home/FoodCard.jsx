@@ -8,7 +8,7 @@ const FoodCard = ({ foodsData }) => {
   
   return (
     <div className="flex justify-center p-4">
-      <div className="w-80 p-5 bg-white/10 backdrop-blur-md border border-white/80 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-110 bg-gradient-to-t from-[#009CB3] to-black transition duration-300 text-white">
+      <div className="w-80 p-5 bg-white/10 backdrop-blur-md border border-white/80 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-110 bg-gradient-to-t from-[#009CB3] to-black transition duration-300 text-white hover:from-black hover:to-[#009CB3]">
         <img
           src={image}
           alt={name}

@@ -19,7 +19,6 @@ button,
 [data-theme="light"] {
   .nav-bg {
     background-color: #f4f1de8D;
-
   }
 
   .footer-bg {
@@ -28,6 +27,10 @@ button,
 
   .form-bg{
     background-color: aqua;
+  }
+
+  .text-color{
+    color: black;
   }
 }
 
@@ -46,5 +49,9 @@ button,
 
   .footer-bg {
     background-color: #f2cc8f;
+  }
+
+  .text-color{
+    color: white;
   }
 }
