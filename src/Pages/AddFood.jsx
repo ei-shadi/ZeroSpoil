@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import AddFoodForm from "../Components/AddFoodForm";
 
 
 const AddFood = () => {
@@ -7,7 +8,9 @@ const AddFood = () => {
       <Helmet>
         <title>Add Food - ZeroSpoil</title>
       </Helmet>
-      This is Add Food
+      <section>
+        <AddFoodForm />
+      </section>
     </>
   );
 };

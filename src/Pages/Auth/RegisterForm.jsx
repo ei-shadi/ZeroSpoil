@@ -101,7 +101,6 @@ const RegisterForm = () => {
               name="photoURL"
               className="mt-1 w-full p-3 border border-gray-300 rounded-xl focus:bg-black text-red-600 focus:text-white focus:outline-none focus:ring-2 focus:ring-[#00D3F2]"
               placeholder="https://example.com/photo.jpg"
-              required
             />
           </div>
 
