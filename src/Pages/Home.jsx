@@ -20,7 +20,7 @@ const Home = () => {
       try {
 
         // Get The Foods Data
-        const foodsResponse = await axios(`${import.meta.env.VITE_API_URL}/foods-data`);
+        const foodsResponse = await axios(`${import.meta.env.VITE_API_URL}/upcoming-expire-foods`);
         const foodsData = await foodsResponse.data;
         setFoodsData(foodsData);
 

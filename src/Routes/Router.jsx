@@ -33,6 +33,12 @@ const router = createBrowserRouter([
         Component: Fridge,
       },
       {
+        path: "food-details/:id",
+        loader: ({ params }) => axios(`${import.meta.env.VITE_API_URL}/food-details/${params.id}`),
+        hydrateFallbackElement: <Loader />,
+        Component: FoodDetails
+      },
+      {
         path: "add-food",
         element: <PrivateRoute>
           <AddFood />

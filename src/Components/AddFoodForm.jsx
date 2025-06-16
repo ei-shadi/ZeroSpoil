@@ -48,7 +48,7 @@ const AddFoodForm = () => {
             html: `<span class="font-bold text-green-500 text-2xl">Thank you, <span class="text-[#00D3F2] font-bold text-2xl">${user.displayName}</span></span>`,
             confirmButtonText: 'Continue',
             timer: 2000,
-            timerProgressBar: true,
+            timerProgressBar: true
           });
           navigate("/my-items");
         }
