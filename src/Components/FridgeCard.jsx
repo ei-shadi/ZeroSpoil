@@ -1,10 +1,12 @@
 import { Link } from 'react-router';
-import Button from '../../Utilities/Btn';
+import Button from '../Utilities/Btn';
 
-const FoodCard = ({ foodsData }) => {
+const FridgeCard = ({ foodData }) => {
 
-  const { title, category, quantity, expiryDate, image, _id } = foodsData;
+  const { title, category, quantity, expiryDate, image, _id } = foodData;
 
+  const today = new Date().toISOString().split('T')[0];
+  const isExpired = expiryDate < today;
 
   return (
     <div className="flex justify-center p-4">
@@ -19,7 +21,19 @@ const FoodCard = ({ foodsData }) => {
 
           <p className="text-lg font-semibold text-[#e07a5f] mb-1 pt-2 border-t-2"><span className='text-white'>Category : </span>{category}</p>
           <p className="text-lg font-semibold text-[#e07a5f] mb-1"><span className='text-white'>Quantity : </span>{quantity}</p>
-          <p className="text-lg font-semibold text-[#e07a5f] mb-1 pb-2 border-b-2"><span className='text-white'>Expires : </span>{expiryDate}</p>
+          <div className='flex gap-4 border-b-2 pb-2 border-[#e07a5f]'>
+          <div>
+            <p className="text-lg font-semibold text-[#e07a5f] mb-1 "><span className='text-white'>Expires : </span>{expiryDate}
+          </p>
+          </div>
+
+          {isExpired && (
+            <div>
+              <h2 className='text-sm text-center font-semibold bg-red-600 text-white py-1 rounded-full hover:bg-white hover:text-red-600 hover:cursor-pointer  px-4'>Expired</h2>
+            </div>
+          )}
+          </div>
+
 
           <div className='flex justify-center mt-6'>
             <Link to={`/food-details/${_id}`}>
@@ -32,4 +46,4 @@ const FoodCard = ({ foodsData }) => {
   );
 };
 
-export default FoodCard;
+export default FridgeCard;
