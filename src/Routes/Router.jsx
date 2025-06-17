@@ -28,8 +28,6 @@ const router = createBrowserRouter([
       },
       {
         path: "fridge",
-        loader: () => axios(`${import.meta.env.VITE_API_URL}/foods-data`),
-        hydrateFallbackElement: <Loader />,
         Component: Fridge,
       },
       {
