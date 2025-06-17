@@ -1,12 +1,15 @@
 import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router";
 import FridgeCard from "../Components/FridgeCard";
+import Loader from "../Utilities/Loader";
 
 
 const Fridge = () => {
 
   const foodsDataResponse = useLoaderData();
   const foodsData = foodsDataResponse.data;
+
+  if(!foodsData) return <Loader />
 
   return (
     <section className="lg:w-9/12 mx-auto">

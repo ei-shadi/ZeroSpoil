@@ -83,7 +83,6 @@ const Home = () => {
       <section className="lg:w-7/12 mx-auto mb-20">
         <FreshFoodTips expiredFoodsData={expiredFoodsData}/>
       </section>
-
       
     </>
 
