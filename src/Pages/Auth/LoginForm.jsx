@@ -30,7 +30,6 @@ const LoginForm = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         setUser(user);
-        console.log(user.displayName);
         Swal.fire({
           icon: "success",
           title: "Logged in successfully!",

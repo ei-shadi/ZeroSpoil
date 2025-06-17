@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useContext } from "react";
+import { useState, useRef, useEffect, useContext, use } from "react";
 import logo from "../assets/Logo.png";
 import { Link, NavLink, useNavigate } from "react-router";
 import Btn from "../Utilities/Btn";
@@ -75,29 +75,59 @@ const Navbar = () => {
       {[
         { path: "/", title: "Home", icon: <FaHome /> },
         { path: "/fridge", title: "Fridge", icon: <FaSnowflake /> },
-        { path: "/add-food", title: "Add Food", icon: <FaPlus /> },
-        { path: "/my-items", title: "My Items", icon: <FaClipboardList /> },
-        { path: "/auth/login", title: "Login", icon: <FaSignInAlt /> },
-        { path: "/auth/register", title: "Register", icon: <FaUserPlus /> },
-      ].map(({ path, title, icon }) => (
-        <li key={path}>
-          <NavLink
-            to={path}
-            onClick={() => setIsMenuOpen(false)}
-            className={({ isActive }) =>
-              `flex items-center gap-2 justify-center ${isActive
-                ? "text-2xl font-extrabold bg-[#8338ec] text-white py-2 rounded-2xl w-3/5 mx-auto"
-                : "italic font-semibold text-cyan-400 text-xl border-b-8 border-t-8 rounded-xl py-2 bg-[#3d405b]  mx-auto"
-              }`
-            }
-          >
-            {icon}
-            {title}
-          </NavLink>
-        </li>
-      ))}
+        user && { path: "/add-food", title: "Add Food", icon: <FaPlus /> },
+        user && { path: "/my-items", title: "My Items", icon: <FaClipboardList /> },
+        user
+          ? {
+            path: "#",
+            title: "Logout",
+            icon: <FaSignInAlt />,
+            action: () => {
+              handleLogout();
+              setIsMenuOpen(false);
+            },
+          }
+          : {
+            path: "/auth/login",
+            title: "Login",
+            icon: <FaSignInAlt />,
+          },
+        !user && {
+          path: "/auth/register",
+          title: "Register",
+          icon: <FaUserPlus />,
+        },
+      ]
+        .filter(Boolean)
+        .map(({ path, title, icon, action }) => (
+          <li key={title}>
+            <NavLink
+              to={action ? "#" : path}
+              onClick={() => {
+                if (action) {
+                  action();
+                } else {
+                  setIsMenuOpen(false);
+                }
+              }}
+              className={({ isActive }) =>
+                `flex items-center gap-2 justify-center ${action
+                  ? "italic font-semibold text-cyan-400 text-xl border-b-8 border-t-8 rounded-xl py-2 bg-[#3d405b] mx-auto"
+                  : isActive
+                    ? "text-2xl font-extrabold bg-[#8338ec] text-white py-2 rounded-2xl w-3/5 mx-auto"
+                    : "italic font-semibold text-cyan-400 text-xl border-b-8 border-t-8 rounded-xl py-2 bg-[#3d405b] mx-auto"
+                }`
+              }
+            >
+              {icon}
+              {title}
+            </NavLink>
+          </li>
+        ))}
     </ul>
   );
+
+
 
   // Handle Logout
   const handleLogout = () => {
@@ -218,7 +248,7 @@ const Navbar = () => {
                           alt="User Avatar"
                           className="w-16 h-16 object-cover rounded-full border-2 border-green-500"
                         />
-                        <p className="font-semibold">{user?.displayName || user?.email}</p>
+                        <p className="font-semibold text-2xl">{user?.displayName || user?.email}</p>
                       </div>
                     )}
 
@@ -235,7 +265,7 @@ const Navbar = () => {
             )}
 
           </div>
-          
+
         </div>
       </div>
     </div>

@@ -39,7 +39,11 @@ const AddFoodForm = () => {
       addedDate: new Date().toISOString(),
     };
 
-    axios.post(`${import.meta.env.VITE_API_URL}/foods-data`, newFood)
+    axios.post(`${import.meta.env.VITE_API_URL}/foods-data`, newFood, {
+      headers: {
+        Authorization: `Bearer ${user?.accessToken}`
+      }
+    })
       .then(data => {
         if (data.data.insertedId) {
           Swal.fire({
@@ -63,7 +67,7 @@ const AddFoodForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#009CB3]">
+    <div className="min-h-screen flex py-20 items-center justify-center bg-gradient-to-br from-[#009CB3]">
       <div className="bg-white rounded-2xl shadow-xl p-8 w-[90%] max-w-xl">
         <h2 className="text-3xl font-bold text-center text-[#00D3F2] mb-6">Add New Food</h2>
         <form onSubmit={handleSubmit} className="space-y-4">

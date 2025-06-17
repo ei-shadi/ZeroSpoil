@@ -29,10 +29,8 @@ const Home = () => {
         const expiredFoodsData = await expiredFoodsResponse.data;
         setExpiredFoodsData(expiredFoodsData);
 
-
       } catch (error) {
         console.error("Error fetching data:", error);
-
       }
     }
 

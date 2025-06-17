@@ -76,7 +76,13 @@ const FoodDetails = () => {
     try {
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/food-data/${id}`, {
         note: noteText,
-      });
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${user?.accessToken}`,
+        },
+      }
+    );
 
       if (res.data.acknowledged) {
         Swal.fire({

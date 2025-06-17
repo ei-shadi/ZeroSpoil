@@ -30,10 +30,10 @@ const StyledWrapper = styled.div`
   button::after {
     content: "";
     position: absolute;
-    top: -10px;
+    top: -6px;
     left: 13%;
     width: 75%;
-    height: 35%;
+    height: 20%;
     background-color: #00D3F2;
     transition: 0.5s;
     transform-origin: center;
@@ -44,10 +44,10 @@ const StyledWrapper = styled.div`
     content: "";
     transform-origin: center;
     position: absolute;
-    top: 85%;
+    top: 88%;
     left: 13%;
     width: 75%;
-    height: 30%;
+    height: 20%;
     background-color: #00D3F2;
     transition: 0.5s;
     border-radius: 0.3em;

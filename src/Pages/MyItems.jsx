@@ -18,15 +18,23 @@ const MyItems = () => {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/food-data-by-email/${user?.email}`)
+      .get(`${import.meta.env.VITE_API_URL}/food-data-by-email/${user?.email}`, {
+        headers: {
+          Authorization: `Bearer ${user?.accessToken}`,
+        },
+      })
       .then(res => setItems(res.data))
       .catch(err => console.error("Error fetching items:", err));
-  }, [user?.email]);
+  }, [user]);
 
   // Handle Delete
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/foods-data/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/foods-data/${id}`, {
+        headers: {
+          Authorization: `Bearer ${user?.accessToken}`,
+        },
+      });
       setItems(prev => prev.filter(item => item._id !== id));
       setDeleteModalOpen(false);
       Swal.fire("Deleted!", "Your item has been deleted.", "success");

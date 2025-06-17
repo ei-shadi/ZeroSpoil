@@ -15,12 +15,12 @@ import AuthProvider from "./Provider/AuthProvider.jsx";
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HelmetProvider>
-      <AuthProvider>
       <ThemeProvider>
+      <AuthProvider>
         <Toaster position="top-center" richColors />
         <RouterProvider router={router} />
-      </ThemeProvider>
       </AuthProvider>
+      </ThemeProvider>
     </HelmetProvider>
   </StrictMode>
 )
