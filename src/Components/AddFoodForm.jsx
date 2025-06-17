@@ -88,15 +88,24 @@ const AddFoodForm = () => {
             <label className="text-sm md:text-lg font-medium text-[#00D3F2] flex items-center gap-2">
               <span className="text-red-500"><FaList /></span> Category
             </label>
-            <input
-              type="text"
+            <select
               name="category"
               value={formData.category}
               onChange={handleChange}
-              placeholder="e.g., Dairy, Vegetables"
-              className="mt-1 w-full p-3 border border-gray-300 rounded-xl placeholder-red-400 focus:bg-black text-[#8338ec] focus:text-white focus:outline-none focus:ring-2 focus:ring-[#00D3F2]"
+              className="mt-1 w-full p-3 border border-gray-300 rounded-xl text-[#8338ec] focus:bg-black focus:text-white focus:outline-none focus:ring-2 focus:ring-[#00D3F2]"
               required
-            />
+            >
+              <option value="">Select Category</option>
+              <option value="Dairy">Dairy</option>
+              <option value="Meat">Meat</option>
+              <option value="Vegetable">Vegetables</option>
+              <option value="Bakery">Bakery</option>
+              <option value="Fruit">Fruits</option>
+              <option value="Beverage">Beverages</option>
+              <option value="Grains">Grains</option>
+              <option value="Poultry">Poultry</option>
+              <option value="Seafood">Seafood</option>
+            </select>
           </div>
 
           {/* Quantity + Unit */}
