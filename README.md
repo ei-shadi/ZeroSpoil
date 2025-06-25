@@ -1,11 +1,12 @@
 <div align="center">
-<h1 style="display: flex; justify-content: center; align-items: center; gap: 12px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 700;">
+<h1 style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 700;">
   <a href="https://zerospoil.netlify.app/" target="_blank" rel="noopener noreferrer" 
-     style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0ea5e9;">
+     style="display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: #0ea5e9;">
     <img src="https://i.ibb.co/0ymYkKTF/Logo.png" alt="ZeroSpoil Logo" style="width: 80px; height: 80px; object-fit: contain;" />
     <span style="font-size: 2rem; font-weight: 800;">ZeroSpoil</span>
   </a>
 </h1>
+
 
   <p><strong>Track your food. Waste less. Save more.</strong></p>
   <p>A smart food expiry tracker helping households reduce food waste through timely alerts and clean organization.</p>
