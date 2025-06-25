@@ -1,57 +1,74 @@
 <div align="center">
- <h1>
+  <h1>
     <a href="https://zerospoil.netlify.app/" target="_blank" rel="noopener noreferrer">
-    🍴
-       ZeroSpoil
+      🍴 ZeroSpoil
     </a>
   </h1>
   <p><strong>Track your food. Waste less. Save more.</strong></p>
   <p>A smart food expiry tracker helping households reduce food waste through timely alerts and clean organization.</p>
+
+  <img src="https://your-image-link-here.com/zerospoil-screenshot.png" alt="ZeroSpoil Screenshot" width="600" style="border-radius:10px; margin-top: 20px;" />
 </div>
 
 ---
 
-## ✨ Overview
+## ✨ Project Overview
 
-**ZeroSpoil** is a full-stack web application built to help users manage food items efficiently by tracking expiry dates. It sends timely reminders to avoid food spoilage and encourages mindful consumption. Designed as a complete CRUD system with authentication, it's a practical app to learn full-stack principles while promoting sustainability.
+**ZeroSpoil** is a full-stack web application designed to help users efficiently manage their food items by tracking expiry dates. It sends timely alerts to prevent food spoilage and promotes mindful consumption. The project is a complete CRUD system with authentication, built to demonstrate full-stack development principles while encouraging sustainability.
 
 ---
 
 ## 🚀 Features
 
-✅ Add, edit, delete, and view food items with expiry dates  
-✅ Firebase authentication (Register/Login/Logout)  
-✅ Get alerts before food items expire  
-✅ SweetAlert2-based confirmation dialogs  
-✅ Real-time toast notifications using React Hot Toast  
-✅ Protected routes and secure user data handling  
-✅ Responsive design with Tailwind + DaisyUI  
-✅ Dynamic page titles using React Helmet Async  
+- Add, edit, delete, and view food items along with their expiry dates  
+- Firebase authentication (Register, Login, Logout)  
+- Alerts before food items expire to minimize waste  
+- SweetAlert2-based confirmation dialogs for better UX  
+- Real-time toast notifications using React Hot Toast  
+- Protected routes to secure user data  
+- Responsive design using Tailwind CSS and DaisyUI  
+- Dynamic page titles with React Helmet Async  
+- Smooth animations using Framer Motion
 
 ---
 
 ## 🧪 Tech Stack
 
-| 🧠 Technology | 🔧 Purpose |
-|--------------|------------|
-| <a href="https://reactjs.org/" target="_blank">⚛ React</a> | UI Development |
-| <a href="https://reactrouter.com/" target="_blank">🔁 React Router</a> | Routing & Navigation |
-| <a href="https://daisyui.com/" target="_blank">🌼 DaisyUI</a> | Prebuilt Tailwind Components |
-| <a href="https://tailwindcss.com/" target="_blank">💨 Tailwind CSS</a> | Utility-First Styling |
-| <a href="https://firebase.google.com/" target="_blank">🔥 Firebase</a> | Authentication & Backend |
-| <a href="https://react-hot-toast.com/" target="_blank">🌶 React Hot Toast</a> | Toast Notifications |
-| <a href="https://sweetalert2.github.io/" target="_blank">🍬 SweetAlert2</a> | Alert Popups |
-| <a href="https://react-icons.github.io/react-icons/" target="_blank">🎨 React Icons</a> | Iconography |
-| <a href="https://github.com/staylor/react-helmet-async" target="_blank">🪖 Helmet Async</a> | SEO / Meta Tags |
-| <a href="https://www.npmjs.com/package/framer-motion" target="_blank">☠️ Framer Motion</a> | SEO / Meta Tags |
+| Technology | Purpose                   |
+|------------|---------------------------|
+| [React](https://reactjs.org/)                | UI Development           |
+| [React Router](https://reactrouter.com/)     | Routing and Navigation   |
+| [DaisyUI](https://daisyui.com/)               | Prebuilt Tailwind CSS components |
+| [Tailwind CSS](https://tailwindcss.com/)     | Utility-first Styling    |
+| [Firebase](https://firebase.google.com/)     | Backend and Authentication |
+| [React Hot Toast](https://react-hot-toast.com/) | Toast Notifications      |
+| [SweetAlert2](https://sweetalert2.github.io/) | Alert Popups             |
+| [React Icons](https://react-icons.github.io/react-icons/) | Iconography              |
+| [React Helmet Async](https://github.com/staylor/react-helmet-async) | SEO and Meta Tags        |
+| [Framer Motion](https://www.framer.com/motion/) | Animations               |
 
 ---
 
-## 🌍 Live Demo
+## 🛠️ Dependencies
 
-🎯 **Try It Live**:  
-👉 <h1>
-  <a href="https://zerospoil.netlify.app/" target="_blank" rel="noopener noreferrer">
-    Open ZeroSpoil Now...
-  </a>
-</h1>
+- react  
+- react-router-dom  
+- firebase  
+- tailwindcss  
+- daisyui  
+- react-hot-toast  
+- sweetalert2  
+- react-icons  
+- react-helmet-async  
+- framer-motion  
+
+---
+
+## 🚀 Running Locally
+
+Follow these steps to run the project on your local machine:
+
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/yourusername/zerospoil.git
+   cd zerospoil
