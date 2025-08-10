@@ -1,7 +1,6 @@
 <div align="center">
   <h1>
     <a href="https://zerospoil.netlify.app/" target="_blank" rel="noopener noreferrer">
-    <img src="https://i.ibb.co/0ymYkKTF/Logo.png" alt="ZeroSpoil Logo" style="width: 50%; height: 50%;" />
        ZeroSpoil
     </a>
   </h1>
