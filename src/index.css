@@ -21,9 +21,6 @@ button,
   }  .nav-bg {
   
 
-  .footer-bg {
-    background-color: #f2cc8f;
-  }
 
   .form-bg{
     background-color: aqua;
@@ -50,11 +47,7 @@ button,
   .nav-links-bg {
     color: #fff;
   }
-
-  .footer-bg {
-    background-color: #f2cc8f;
-  }
-
+  
   .text-color{
     color: white;
   }
