@@ -4,16 +4,16 @@ import Button from "../../Utilities/Btn";
 const DonateFoodSection = () => {
   return (
     <section
-      className="relative bg-cover bg-center bg-no-repeat text-white bg-[url('https://i.ibb.co/N2324fDt/Donate-Food.jpg')] bg-center bg-no-repeat"
+      className="relative bg-cover bg-center bg-no-repeat text-white bg-[url('https://i.ibb.co/N2324fDt/Donate-Food.jpg')] bg-center bg-no-repeat h-[55vh]"
     >
-      <div className="absolute inset-0 bg-black/60"></div> {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-black/40"></div> {/* Overlay for readability */}
 
-      <div className="relative z-10 flex items-center justify-center px-6 py-24 text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-4xl font-bold mb-4 text-[#f4a261]">
+      <div className="relative z-10 flex items-center justify-center px-5 py-14 md:py-24 text-center">
+        <div className="max-w-5xl mx-auto bg-black/60 py-10 px-5 md:px-10 rounded-2xl">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4 text-[#f4a261]">
             Share the Goodness, Donate Extra Food 🍲
           </h2>
-          <p className="text-lg mb-6 text-white">
+          <p className="text-lg mb-6 text-white font-semibold">
             Donate food items that are close to expiry but still safe, connecting them to local food BANKS or NGOs.
           </p>
           <Link 

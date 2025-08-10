@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 
 const foodTips = [
   {
@@ -61,9 +62,9 @@ const cardVariants = {
 
 const FreshFoodTips = () => {
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-      <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-        <h2 className="text-5xl mb-6 md:text-6xl text-center font-bold leading-none tracking-tight text-color sm:text-4xl md:mx-auto">
+    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-7xl lg:max-w-screen-xl md:px-10 lg:px-8 lg:py-20">
+      <div className="mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <h2 className="text-4xl mb-6 md:text-6xl text-center font-bold leading-none tracking-tight text-color sm:text-4xl md:mx-auto">
           <span className="relative inline-block">
             <svg
               viewBox="0 0 52 24"
@@ -79,9 +80,12 @@ const FreshFoodTips = () => {
             </svg>
             <span className="relative">How To</span>
           </span>{' '}
-          Keep Your Food Fresh
+          Keep Your 
+          <br />
+          <span className="text-[#a05cff] italic pl-2">Food Fresh</span>
+          <HiOutlineClipboardDocumentList className="inline ml-3 text-[#8338EC]" />
         </h2>
-        <p className="text-base text-[#e07a5f] text-center md:text-lg">
+        <p className="text-base des-color text-center md:text-lg font-semibold opacity-70">
           Keep your food fresher for longer with smart storage! Learn simple tips tailored to each item—whether it's milk, meat, or veggies—to reduce waste and enjoy better taste every day.
         </p>
       </div>
