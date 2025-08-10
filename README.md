@@ -1,6 +1,7 @@
 <div align="center">
   <h1>
     <a href="https://zerospoil.netlify.app/" target="_blank" rel="noopener noreferrer">
+      🕖
        ZeroSpoil
     </a>
   </h1>
