@@ -63,7 +63,7 @@ const MyItems = () => {
       <Helmet>
         <title>My Items - ZeroSpoil</title>
       </Helmet>
-      <div className="w-11/12 md:w-9/12 mx-auto my-20">
+      <div className="w-11/12 md:w-9/12 mx-auto py-24">
       <h2 className="text-4xl w-3/4 mx-auto md:text-5xl text-center my-10 text-color">My Food Items</h2>
         <div className="p-4 bg-gradient-to-t from-[#009CB3] to-black">
           

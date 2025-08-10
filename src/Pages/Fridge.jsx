@@ -70,7 +70,7 @@ const Fridge = () => {
   if (error) return <div className="text-center text-red-500">{error}</div>;
 
   return (
-    <section className="lg:w-9/12 mx-auto px-4">
+    <section className="lg:w-9/12 mx-auto px-4 pt-24">
       <Helmet>
         <title>Fridge - ZeroSpoil</title>
       </Helmet>
