@@ -3,9 +3,8 @@ import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
-import Btn from "../../Utilities/Btn";
-
-
+import Btn from '../../Utilities/Btn';
+import { Link } from 'react-router';
 
 const slides = [
   {
@@ -45,16 +44,26 @@ const Slider = () => {
     >
       {slides.map(slide => (
         <SwiperSlide key={slide.id}>
-          <div
-            className="h-[750px]  w-full bg-cover bg-center relative flex items-center justify-center transition-opacity duration-1000"
-            style={{ backgroundImage: `url(${slide.imageUrl})` }}
-          >
-            <div className="absolute inset-0 bg-black/50"></div>
-            <div className="relative z-10 text-center text-white px-6 max-w-xl">
-              <h2 className="text-3xl md:text-4xl font-bold mb-3">{slide.title}</h2>
-              <p className="mb-4 text-lg">{slide.description}</p>
+          <div className="relative h-screen w-full flex items-center justify-center">
+            {/* Blurred background image */}
+            <div
+              className="absolute inset-0 bg-center bg-cover scale-105"
+              style={{ filter: 'blur(3px)', backgroundImage: `url(${slide.imageUrl})` }}
+              aria-hidden="true"
+            ></div>
 
-              <Btn name={slide.buttonText} />
+            {/* Overlay dark layer */}
+            <div className="absolute inset-0 bg-black/30"></div>
+
+            {/* Text content in front */}
+            <div className="relative z-10 text-center text-white bg-black/60 py-20 md:py-10 px-2 md:px-10 rounded-2xl max-w-4xl mt-20 mx-4">
+              <h2 className="text-4xl md:text-6xl font-bold mb-3">{slide.title}</h2>
+              <p className="mb-6 text-lg md:text-xl">{slide.description}</p>
+              <div>
+                <Link to="/fridge">
+                <Btn name={slide.buttonText} />
+                </Link>
+              </div>
             </div>
           </div>
         </SwiperSlide>

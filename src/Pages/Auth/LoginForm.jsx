@@ -9,7 +9,7 @@ import { auth } from '../../Firebase/Firebase.config';
 
 
 
-const LoginForm = () => {
+const LoginForm = () => { 
   const { logInUser, setUser } = useContext(AuthContext);
   const provider = new GoogleAuthProvider();
   const [showPassword, setShowPassword] = useState(false);
@@ -17,7 +17,7 @@ const LoginForm = () => {
   const navigate = useNavigate();
 
 
-  const handleLogin = e => {
+  const handleLogin = e => { 
     e.preventDefault();
     const form = e.target
     const formData = new FormData(form)

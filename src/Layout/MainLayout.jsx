@@ -10,16 +10,14 @@ const MainLayout = () => {
   return (
     <div>
       <ScrollToTop />
-
-      <header className="h-[88px]">
+      
+      <header >
         <Navbar />
       </header>
-
 
       <main className="min-h-screen">
         <Outlet />
       </main>
-
 
       <footer>
         <Footer />

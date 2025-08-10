@@ -17,9 +17,9 @@ button,
 
 
 [data-theme="light"] {
-  .nav-bg {
-    background-color: #f4f1de8D;
-  }
+  background-color: #f4f1de8D;
+  }  .nav-bg {
+  
 
   .footer-bg {
     background-color: #f2cc8f;

@@ -32,9 +32,9 @@ const router = createBrowserRouter([
       },
       {
         path: "food-details/:id",
-        loader: ({ params }) => axios(`${import.meta.env.VITE_API_URL}/food-details/${params.id}`),
         hydrateFallbackElement: <Loader />,
-        Component: FoodDetails
+        Component: FoodDetails,
+        loader: ({ params }) => axios(`${import.meta.env.VITE_API_URL}/food-details/${params.id}`)
       },
       {
         path: "add-food",

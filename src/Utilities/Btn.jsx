@@ -21,7 +21,7 @@ const StyledWrapper = styled.div`
     color: #00D3F2;
     transition: 0.5s;
     border-radius: 0.3em;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     cursor: pointer;
     padding: 0 1.5em;
