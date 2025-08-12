@@ -2,7 +2,7 @@
 <div align="center">
   <h1>
     <a href="https://zerospoil.netlify.app/" target="_blank" rel="noopener noreferrer">
-      🕖 ZeroSpoil
+      🕖 <strong>ZeroSpoil</strong>
     </a>
   </h1>
   <p><strong>Track your food. Waste less. Save more.</strong></p>
@@ -14,7 +14,7 @@
 <h2 align="center">📷 Screenshot</h2>
 
 <div align="center">
-  <img src="https://i.ibb.co.com/4ZNxvTGC/Zero-Spoil.png" alt="EliteClub Screenshot" width="700" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+  <img src="https://i.ibb.co.com/4ZNxvTGC/Zero-Spoil.png" alt="ZeroSpoil Screenshot" width="700" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
 </div>
 
 ---
@@ -23,7 +23,7 @@
 
 <h2 align="center">✨ Project Overview</h2>
 
-**ZeroSpoil** is a full-stack web application designed to help users efficiently manage food items by tracking expiry dates. It sends timely reminders to prevent food spoilage and promotes mindful consumption. Built as a complete CRUD system with secure authentication, it’s a practical app to learn full-stack principles while encouraging sustainability.
+**ZeroSpoil** is a full-stack web application designed to help users efficiently manage food items by tracking expiry dates. It sends timely reminders to prevent food spoilage and promotes mindful consumption. Built as a complete CRUD system with secure Firebase authentication, it encourages sustainability by reducing food waste.
 
 ---
 
@@ -31,7 +31,7 @@
 
 * 🔖 **Add, edit, delete, and view food items with expiry dates**  
 * 🔐 **Firebase authentication** (Register / Login / Logout)  
-* ⏰ **Get alerts before food items expire**  
+* ⏰ **Receive alerts before food items expire**  
 * ✅ **SweetAlert2-powered confirmation dialogs**  
 * 💬 **Real-time toast notifications using React Hot Toast**  
 * 🔒 **Protected routes ensuring secure user data handling**  
@@ -40,56 +40,51 @@
 
 ---
 
-<h2 align="center">🧪 Tech Stack</h2>
+<h2 align="center">🤖 Tech Stack</h2>
 
 <table align="center">
   <tr>
-    <th>🧠 Technology</th>
-    <th>🔧 Purpose</th>
+    <th>🛠️ Technology</th>
+    <th>💡 Purpose</th>
   </tr>
   <tr>
-    <td><a href="https://reactjs.org/" target="_blank">⚛ React</a></td>
-    <td>UI Development</td>
+    <td>⚛ <strong>React</strong></td>
+    <td>Frontend UI</td>
   </tr>
   <tr>
-    <td><a href="https://reactrouter.com/" target="_blank">🔁 React Router</a></td>
+    <td>🔁 <strong>React Router</strong></td>
     <td>Routing & Navigation</td>
   </tr>
   <tr>
-    <td><a href="https://daisyui.com/" target="_blank">🌼 DaisyUI</a></td>
-    <td>Prebuilt Tailwind Components</td>
+    <td>🌼 <strong>DaisyUI</strong> + 💨 <strong>Tailwind CSS</strong></td>
+    <td>Styling & Components</td>
   </tr>
   <tr>
-    <td><a href="https://tailwindcss.com/" target="_blank">💨 Tailwind CSS</a></td>
-    <td>Utility-First Styling</td>
-  </tr>
-  <tr>
-    <td><a href="https://firebase.google.com/" target="_blank">🔥 Firebase</a></td>
+    <td>🔥 <strong>Firebase</strong></td>
     <td>Authentication & Backend</td>
   </tr>
   <tr>
-    <td><a href="https://react-hot-toast.com/" target="_blank">🌶 React Hot Toast</a></td>
+    <td>🌶 <strong>React Hot Toast</strong></td>
     <td>Toast Notifications</td>
   </tr>
   <tr>
-    <td><a href="https://sweetalert2.github.io/" target="_blank">🍬 SweetAlert2</a></td>
+    <td>🍬 <strong>SweetAlert2</strong></td>
     <td>Alert Popups</td>
   </tr>
   <tr>
-    <td><a href="https://react-icons.github.io/react-icons/" target="_blank">🎨 React Icons</a></td>
+    <td>🎨 <strong>React Icons</strong></td>
     <td>Iconography</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/staylor/react-helmet-async" target="_blank">🪖 Helmet Async</a></td>
+    <td>🪖 <strong>React Helmet Async</strong></td>
     <td>SEO / Meta Tags</td>
   </tr>
   <tr>
-    <td><a href="https://www.npmjs.com/package/framer-motion" target="_blank">⚡ Framer Motion</a></td>
+    <td>⚡ <strong>Framer Motion</strong></td>
     <td>Animations</td>
   </tr>
 </table>
 
----
 ---
 
 <h2 align="center">🌐 Live Site</h2>
@@ -100,7 +95,7 @@
 
 <h2 align="center">🖥️ ZeroSpoil Server:</h2>
 
-🌟 **Server Code:**  
+🌟 <strong>Server Code:</strong>  
 <a href="https://github.com/ei-shadi/zerospoil-server" target="_blank" rel="noopener noreferrer">https://github.com/ei-shadi/zerospoil-server</a>
 
 ---
@@ -202,4 +197,3 @@
 <p>🔐 <strong>Note:</strong> Protected routes require Firebase Bearer Token authentication.</p>
 
 </div>
-
