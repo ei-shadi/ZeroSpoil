@@ -97,7 +97,7 @@
 <h2 align="center">🖥️ ZeroSpoil Server:</h2>
 
 🌟 <strong>Server Code:</strong>  
-<a href="https://github.com/ei-shadi/ZeroSpoil-Server.git" target="_blank" rel="noopener noreferrer">https://github.com/ei-shadi/ZeroSpoil-Server.git</a>
+👉<a href="https://github.com/ei-shadi/ZeroSpoil-Server.git" target="_blank" rel="noopener noreferrer">https://github.com/ei-shadi/ZeroSpoil-Server.git</a>
 
 ---
 
