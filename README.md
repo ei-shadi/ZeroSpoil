@@ -133,22 +133,73 @@
 6. **Open your browser at:**  
    [http://localhost:3000](http://localhost:3000)
 
+<div align="center">
 
-<h2 align="center">⚙️ API Endpoints (Express + MongoDB + Firebase Auth)</h2>
+<h2>⚙️ API Endpoints (Express + MongoDB + Firebase Auth)</h2>
 
-| Method | Endpoint                    | Description                          |
-|--------|-----------------------------|------------------------------------|
-| GET    | `/foods-data`               | Get all food items                  |
-| GET    | `/upcoming-expire-foods`   | Get foods expiring within 7 days   |
-| GET    | `/expired-foods`           | Get expired foods                  |
-| GET    | `/food-details/:id`        | Get food item by ID                |
-| GET    | `/food-data-by-email/:email`| Get food items by user email (Auth)|
-| POST   | `/foods-data`              | Add new food item (Auth)           |
-| POST   | `/food-data/:id`           | Add note to food item (Auth)       |
-| PUT    | `/foods-data/:id`          | Update food item                   |
-| DELETE | `/foods-data/:id`          | Delete food item (Auth)            |
-| GET    | `/foods-data/search`       | Search & paginate food items       |
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Endpoint</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GET</td>
+      <td><code>/foods-data</code></td>
+      <td>Get all food items</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td><code>/upcoming-expire-foods</code></td>
+      <td>Get foods expiring within 7 days</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td><code>/expired-foods</code></td>
+      <td>Get expired foods</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td><code>/food-details/:id</code></td>
+      <td>Get food item by ID</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td><code>/food-data-by-email/:email</code></td>
+      <td>Get food items by user email (Auth)</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td><code>/foods-data</code></td>
+      <td>Add new food item (Auth)</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td><code>/food-data/:id</code></td>
+      <td>Add note to food item (Auth)</td>
+    </tr>
+    <tr>
+      <td>PUT</td>
+      <td><code>/foods-data/:id</code></td>
+      <td>Update food item</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td><code>/foods-data/:id</code></td>
+      <td>Delete food item (Auth)</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td><code>/foods-data/search</code></td>
+      <td>Search & paginate food items</td>
+    </tr>
+  </tbody>
+</table>
 
-🔐 **Note:** Protected routes require Firebase Bearer Token authentication.
+<p>🔐 <strong>Note:</strong> Protected routes require Firebase Bearer Token authentication.</p>
 
----
+</div>
+
