@@ -85,7 +85,7 @@
 <h2 align="center">📷 Screenshot</h2>
 
 <div align="center">
-  <img src="https://i.ibb.co.com/VWJstPjB/Zero-Spoil.png" alt="ZeroSpoil Screenshot" width="600" style="border-radius:8px; margin-top:15px" />
+  <img src="https://i.ibb.co.com/4ZNxvTGC/Zero-Spoil.png" alt="ZeroSpoil Screenshot" width="600" style="border-radius:8px; margin-top:15px" />
 </div>
 
 ---
