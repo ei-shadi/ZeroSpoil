@@ -12,7 +12,7 @@
 
 ---
 
-<h2 align="center">✨ Overview</h2>
+<h2 align="center">✨ Project Overview</h2>
 
 **ZeroSpoil** is a full-stack web application designed to help users efficiently manage food items by tracking expiry dates. It sends timely reminders to prevent food spoilage and promotes mindful consumption. Built as a complete CRUD system with secure authentication, it’s a practical app to learn full-stack principles while encouraging sustainability.
 
