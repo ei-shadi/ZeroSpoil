@@ -1,8 +1,8 @@
-
 <div align="center">
   <h1>
     <a href="https://zerospoil.netlify.app/" target="_blank" rel="noopener noreferrer">
-      🕖 <strong>ZeroSpoil</strong>
+    <img src="https://i.ibb.co/0ymYkKTF/Logo.png" alt="ZeroSpoil Logo" style="width: 50%; height: 50%;" />
+       ZeroSpoil
     </a>
   </h1>
   <p><strong>Track your food. Waste less. Save more.</strong></p>
@@ -11,197 +11,47 @@
 
 ---
 
-<h2 align="center">📷 Interface Snapshots 🌟</h2>
+## ✨ Overview
 
-<div align="center">
-  <img src="https://i.ibb.co.com/4ZNxvTGC/Zero-Spoil.png" alt="ZeroSpoil Screenshot" width="700" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
-</div>
+**ZeroSpoil** is a full-stack web application built to help users manage food items efficiently by tracking expiry dates. It sends timely reminders to avoid food spoilage and encourages mindful consumption. Designed as a complete CRUD system with authentication, it's a practical app to learn full-stack principles while promoting sustainability.
 
 ---
 
----
+## 🚀 Features
 
-<h2 align="center">✨ Project Overview</h2>
-
-**ZeroSpoil** is a full-stack web application designed to help users efficiently manage food items by tracking expiry dates. It sends timely reminders to prevent food spoilage and promotes mindful consumption. Built as a complete CRUD system with secure Firebase authentication, it encourages sustainability by reducing food waste.
-
----
-
-<h2 align="center">🚀 Features</h2>
-
-* 🔖 **Add, edit, delete, and view food items with expiry dates**  
-* 🔐 **Firebase authentication** (Register / Login / Logout)  
-* ⏰ **Receive alerts before food items expire**  
-* ✅ **SweetAlert2-powered confirmation dialogs**  
-* 💬 **Real-time toast notifications using React Hot Toast**  
-* 🔒 **Protected routes ensuring secure user data handling**  
-* 📱 **Responsive design with Tailwind CSS and DaisyUI**  
-* 🏷️ **Dynamic page titles using React Helmet Async**  
+✅ Add, edit, delete, and view food items with expiry dates  
+✅ Firebase authentication (Register/Login/Logout)  
+✅ Get alerts before food items expire  
+✅ SweetAlert2-based confirmation dialogs  
+✅ Real-time toast notifications using React Hot Toast  
+✅ Protected routes and secure user data handling  
+✅ Responsive design with Tailwind + DaisyUI  
+✅ Dynamic page titles using React Helmet Async  
 
 ---
 
-<h2 align="center">🤖 Tech Stack</h2>
+## 🧪 Tech Stack
 
-<table align="center">
-  <tr>
-    <th>🛠️ Technology</th>
-    <th>💡 Purpose</th>
-  </tr>
-  <tr>
-    <td>⚛ <strong>React</strong></td>
-    <td>Frontend UI</td>
-  </tr>
-  <tr>
-    <td>🔁 <strong>React Router</strong></td>
-    <td>Routing & Navigation</td>
-  </tr>
-  <tr>
-    <td>🌼 <strong>DaisyUI</strong> + 💨 <strong>Tailwind CSS</strong></td>
-    <td>Styling & Components</td>
-  </tr>
-  <tr>
-    <td>🔥 <strong>Firebase</strong></td>
-    <td>Authentication & Backend</td>
-  </tr>
-  <tr>
-    <td>🌶 <strong>React Hot Toast</strong></td>
-    <td>Toast Notifications</td>
-  </tr>
-  <tr>
-    <td>🍬 <strong>SweetAlert2</strong></td>
-    <td>Alert Popups</td>
-  </tr>
-  <tr>
-    <td>🎨 <strong>React Icons</strong></td>
-    <td>Iconography</td>
-  </tr>
-  <tr>
-    <td>🪖 <strong>React Helmet Async</strong></td>
-    <td>SEO / Meta Tags</td>
-  </tr>
-  <tr>
-    <td>⚡ <strong>Framer Motion</strong></td>
-    <td>Animations</td>
-  </tr>
-</table>
+| 🧠 Technology | 🔧 Purpose |
+|--------------|------------|
+| <a href="https://reactjs.org/" target="_blank">⚛ React</a> | UI Development |
+| <a href="https://reactrouter.com/" target="_blank">🔁 React Router</a> | Routing & Navigation |
+| <a href="https://daisyui.com/" target="_blank">🌼 DaisyUI</a> | Prebuilt Tailwind Components |
+| <a href="https://tailwindcss.com/" target="_blank">💨 Tailwind CSS</a> | Utility-First Styling |
+| <a href="https://firebase.google.com/" target="_blank">🔥 Firebase</a> | Authentication & Backend |
+| <a href="https://react-hot-toast.com/" target="_blank">🌶 React Hot Toast</a> | Toast Notifications |
+| <a href="https://sweetalert2.github.io/" target="_blank">🍬 SweetAlert2</a> | Alert Popups |
+| <a href="https://react-icons.github.io/react-icons/" target="_blank">🎨 React Icons</a> | Iconography |
+| <a href="https://github.com/staylor/react-helmet-async" target="_blank">🪖 Helmet Async</a> | SEO / Meta Tags |
+| <a href="https://www.npmjs.com/package/framer-motion" target="_blank">☠️ Framer Motion</a> | SEO / Meta Tags |
 
 ---
 
-<h2 align="center">🌐 Live Site</h2>
+## 🌍 Live Demo
 
-🎯 **Visit Live**  
-👉 <a href="https://zerospoil.netlify.app/" target="_blank" rel="noopener noreferrer">Open ZeroSpoil Now...</a>
-
----
-
-<h2 align="center">🖥️ ZeroSpoil Server:</h2>
-
-🌟 <strong>Server Code:</strong>  
-👉<a href="https://github.com/ei-shadi/ZeroSpoil-Server.git" target="_blank" rel="noopener noreferrer">https://github.com/ei-shadi/ZeroSpoil-Server.git</a>
-
----
-
-<h2 align="center">⚙️ Installation & Setup</h2>
-
-1. **Clone The Repository For Frontend:**
-```bash
-git clone https://github.com/ei-shadi/ZeroSpoil.git
-cd eliteclub
-npm install          # inside root or / client folder
-```
-
-2. **Clone The Repository For Backend:**
-```bash
-git clone https://github.com/ei-shadi/ZeroSpoil-Server.git
-cd server 
-npm install          # inside root or / server folder
-```
-
-3. **Configure environment variables:**  
-Create a `.env` file inside `/server` folder with:
-```
-MONGODB_URI=your_mongodb_uri
-```
-
-4. **Add Firebase Admin SDK:**  
-Place your Firebase Admin SDK file as `firebase-admin-key.json` in the `/server` folder.
-
-5. **👀 Let's Go Live:**
-```bash
-cd ZeroSpoil              ✨Client Side
-npm run dev
-----------------------
-----------------------
-cd ZeroSpoil-Server       ✨Server Side
-node index.js
-```
-
-<div align="center">
-
-<h2>📦 API Endpoints (Express + MongoDB + Firebase Auth)</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Method</th>
-      <th>Endpoint</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GET</td>
-      <td><code>/foods-data</code></td>
-      <td>Get all food items</td>
-    </tr>
-    <tr>
-      <td>GET</td>
-      <td><code>/upcoming-expire-foods</code></td>
-      <td>Get foods expiring within 7 days</td>
-    </tr>
-    <tr>
-      <td>GET</td>
-      <td><code>/expired-foods</code></td>
-      <td>Get expired foods</td>
-    </tr>
-    <tr>
-      <td>GET</td>
-      <td><code>/food-details/:id</code></td>
-      <td>Get food item by ID</td>
-    </tr>
-    <tr>
-      <td>GET</td>
-      <td><code>/food-data-by-email/:email</code></td>
-      <td>Get food items by user email (Auth)</td>
-    </tr>
-    <tr>
-      <td>POST</td>
-      <td><code>/foods-data</code></td>
-      <td>Add new food item (Auth)</td>
-    </tr>
-    <tr>
-      <td>POST</td>
-      <td><code>/food-data/:id</code></td>
-      <td>Add note to food item (Auth)</td>
-    </tr>
-    <tr>
-      <td>PUT</td>
-      <td><code>/foods-data/:id</code></td>
-      <td>Update food item</td>
-    </tr>
-    <tr>
-      <td>DELETE</td>
-      <td><code>/foods-data/:id</code></td>
-      <td>Delete food item (Auth)</td>
-    </tr>
-    <tr>
-      <td>GET</td>
-      <td><code>/foods-data/search</code></td>
-      <td>Search & paginate food items</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>🔐 <strong>Note:</strong> Protected routes require Firebase Bearer Token authentication.</p>
-
-</div>
+🎯 **Try It Live**:  
+👉 <h1>
+  <a href="https://zerospoil.netlify.app/" target="_blank" rel="noopener noreferrer">
+    Open ZeroSpoil Now...
+  </a>
+</h1>

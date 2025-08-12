@@ -11,6 +11,7 @@ import Error from "../Pages/Error";
 import PrivateRoute from "../Provider/PrivateRoute";
 import FoodDetails from "../Components/FoodDetails";
 import axios from "axios";
+import FAQ from "../Pages/Faq";
 
 
 
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <MyItems />
         </PrivateRoute>
+      },
+      {
+        path: "faq",
+        element: <FAQ />
       },
       {
         path: "auth/login",

@@ -77,7 +77,7 @@ const LoginForm = () => {
 
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#009CB3]">
+    <div className="min-h-screen flex items-center justify-center">
       <div className="bg-white rounded-2xl shadow-xl p-8 w-[90%] max-w-md">
         <div className="flex flex-col items-center mb-6">
           <FaUserCircle className="text-5xl text-[#00D3F2]" />
@@ -129,7 +129,7 @@ const LoginForm = () => {
 
           <button
             type="submit"
-            className="w-full bg-[#00D3F2] hover:bg-[#8338ec] hover:scale-110 cursor-pointer text-white md:text-xl font-bold py-3 rounded-xl transition duration-200"
+            className="w-full bg-[#00D3F2] hover:bg-[#8338ec] hover:scale-105 cursor-pointer text-white md:text-xl font-bold py-3 rounded-xl transition duration-200"
           >
             Login
           </button>
@@ -138,7 +138,7 @@ const LoginForm = () => {
         <div className="mt-4">
           <button
             onClick={handleGoogleLogin}
-            className="w-full flex items-center justify-center gap-3 bg-red-500 hover:bg-[#8338ec] md:text-xl hover:scale-110 cursor-pointer text-white font-semibold py-3 rounded-xl transition duration-200 mt-2">
+            className="w-full flex items-center justify-center gap-3 bg-red-500 hover:bg-[#8338ec] md:text-xl hover:scale-105 cursor-pointer text-white font-semibold py-3 rounded-xl transition duration-200 mt-2">
             <FaGoogle className="text-xl" />
             Sign in with Google
           </button>

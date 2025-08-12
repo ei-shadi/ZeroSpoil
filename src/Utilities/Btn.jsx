@@ -14,17 +14,16 @@ const StyledWrapper = styled.div`
   button {
     width: fit-content;
     position: relative;
-    height: 2.5em;
     border: 3px ridge #149CEA;
     outline: none;
     background-color: #3d405b;
-    color: #00D3F2;
+    color: white;
     transition: 0.5s;
     border-radius: 0.3em;
-    font-size: 25px;
+    font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-    padding: 0 1.5em;
+    padding: 0.3em 1.5em;
   }
 
   button::after {
@@ -60,9 +59,9 @@ const StyledWrapper = styled.div`
   
 
   button:hover {
-    background-color: #8338ec;
+    background-color: black;
     color: #fff;
-    scale: 0.8;
+    scale: 1.1;
     border-radius: 4em;
   }`;
 

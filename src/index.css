@@ -17,10 +17,15 @@ button,
 
 
 [data-theme="light"] {
-  background-color: #f4f1de8D;
-  }  .nav-bg {
-  
 
+  body {
+    background-color: rgb(219, 219, 219);
+  }
+
+  .center-bg{
+    background: white;
+    color: Black;
+  }
 
   .form-bg{
     background-color: aqua;
@@ -40,18 +45,16 @@ button,
     background-color: black;
   }
 
-  .nav-bg {
-    background-color: #0000004D;
-  }
-
-  .nav-links-bg {
-    color: #fff;
+  .center-bg{
+    background: white;
+    color: black;
   }
   
   .text-color{
     color: white;
   }
   .des-color{
-    color: cyan;
+    color: rgb(0, 255, 255);
   }
 }
+
