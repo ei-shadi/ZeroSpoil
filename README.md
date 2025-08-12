@@ -7,7 +7,7 @@
   </h1>
   <p><strong>Track your food. Waste less. Save more.</strong></p>
   <p>A smart food expiry tracker helping households reduce food waste through timely alerts and clean organization.</p>
-  <img src="https://your-image-link-here.com/screenshot.png" alt="ZeroSpoil Screenshot" width="600" style="border-radius:8px; margin-top:15px" />
+  <img src="https://i.ibb.co.com/4ZNxvTGC/Zero-Spoil.png" alt="ZeroSpoil Screenshot" width="600" style="border-radius:8px; margin-top:15px" />
 </div>
 
 ---
