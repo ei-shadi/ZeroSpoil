@@ -56,7 +56,7 @@
 ## 🚀 How to Run Locally
 
 1. Clone the repository:  
-   `git clone https://github.com/your-username/zerospoil.git`
+   `git clone https://github.com/ei-shadi/zerospoil.git`
 
 2. Navigate to the project directory:  
    `cd zerospoil`
@@ -72,4 +72,4 @@
 
 6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
    ```bash
-   git clone https://github.com/your-username/zerospoil.git
+   git clone https://github.com/ei-shadi/zerospoil.git
