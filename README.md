@@ -11,7 +11,7 @@
 
 ---
 
-<h2 align="center">📷 Screenshot</h2>
+<h2 align="center">📷 Interface Snapshots</h2>
 
 <div align="center">
   <img src="https://i.ibb.co.com/4ZNxvTGC/Zero-Spoil.png" alt="ZeroSpoil Screenshot" width="700" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
@@ -96,41 +96,48 @@
 <h2 align="center">🖥️ ZeroSpoil Server:</h2>
 
 🌟 <strong>Server Code:</strong>  
-<a href="https://github.com/ei-shadi/zerospoil-server" target="_blank" rel="noopener noreferrer">https://github.com/ei-shadi/zerospoil-server</a>
+<a href="https://github.com/ei-shadi/ZeroSpoil-Server.git" target="_blank" rel="noopener noreferrer">https://github.com/ei-shadi/ZeroSpoil-Server.git</a>
 
 ---
 
-<h2 align="center">🚀 How to Run Locally</h2>
+<h2 align="center">⚙️ Installation & Setup</h2>
 
-1. **Clone the repository:**  
-   ```bash
-   git clone https://github.com/ei-shadi/zerospoil.git
-   ```
+1. **Clone The Repository For Frontend:**
+```bash
+git clone https://github.com/ei-shadi/ZeroSpoil.git
+cd eliteclub
+npm install          # inside root or / client folder
+```
 
-2. **Navigate to the project directory:**  
-   ```bash
-   cd zerospoil
-   ```
+2. **Clone The Repository For Backend:**
+```bash
+git clone https://github.com/ei-shadi/ZeroSpoil-Server.git
+cd server 
+npm install          # inside root or / server folder
+```
 
-3. **Install dependencies:**  
-   ```bash
-   npm install
-   ```
+3. **Configure environment variables:**  
+Create a `.env` file inside `/server` folder with:
+```
+MONGODB_URI=your_mongodb_uri
+```
 
-4. **Configure environment variables:**  
-   - Create a `.env` file with your Firebase and MongoDB credentials (or `firebaseConfig.js` if you use that).
+4. **Add Firebase Admin SDK:**  
+Place your Firebase Admin SDK file as `firebase-admin-key.json` in the `/server` folder.
 
-5. **Run the development server:**  
-   ```bash
-   npm start
-   ```
-
-6. **Open your browser at:**  
-   [http://localhost:3000](http://localhost:3000)
+5. **👀 Let's Go Live:**
+```bash
+cd ZeroSpoil              ✨Client Side
+npm run dev
+----------------------
+----------------------
+cd ZeroSpoil-Server       ✨Server Side
+node index.js
+```
 
 <div align="center">
 
-<h2>⚙️ API Endpoints (Express + MongoDB + Firebase Auth)</h2>
+<h2>📦 API Endpoints (Express + MongoDB + Firebase Auth)</h2>
 
 <table>
   <thead>
