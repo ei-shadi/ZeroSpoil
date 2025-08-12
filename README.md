@@ -7,8 +7,17 @@
   </h1>
   <p><strong>Track your food. Waste less. Save more.</strong></p>
   <p>A smart food expiry tracker helping households reduce food waste through timely alerts and clean organization.</p>
-  <img src="https://i.ibb.co.com/4ZNxvTGC/Zero-Spoil.png" alt="ZeroSpoil Screenshot" width="600" style="border-radius:8px; margin-top:15px" />
 </div>
+
+---
+
+<h2 align="center">📷 Screenshot</h2>
+
+<div align="center">
+  <img src="https://i.ibb.co.com/5XTVKChB/Elite-Club.png" alt="EliteClub Screenshot" width="700" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+</div>
+
+---
 
 ---
 
@@ -81,12 +90,18 @@
 </table>
 
 ---
+---
 
-<h2 align="center">📷 Screenshot</h2>
+<h2 align="center">🌐 Live Site</h2>
 
-<div align="center">
-  <img src="https://i.ibb.co.com/4ZNxvTGC/Zero-Spoil.png" alt="ZeroSpoil Screenshot" width="600" style="border-radius:8px; margin-top:15px" />
-</div>
+👉 <a href="https://zerospoil.netlify.app/" target="_blank" rel="noopener noreferrer">Visit ZeroSpoil Live</a>
+
+---
+
+<h2 align="center">🖥️ ZeroSpoil Server:</h2>
+
+🌟 **Server Code:**  
+<a href="https://github.com/ei-shadi/zerospoil-server" target="_blank" rel="noopener noreferrer">https://github.com/ei-shadi/zerospoil-server</a>
 
 ---
 
@@ -118,20 +133,6 @@
 6. **Open your browser at:**  
    [http://localhost:3000](http://localhost:3000)
 
----
-
-<h2 align="center">🌐 Live Site</h2>
-
-👉 <a href="https://zerospoil.netlify.app/" target="_blank" rel="noopener noreferrer">Visit ZeroSpoil Live</a>
-
----
-
-<h2 align="center">🖥️ ZeroSpoil Server:</h2>
-
-🌟 **Server Code:**  
-<a href="https://github.com/ei-shadi/zerospoil-server" target="_blank" rel="noopener noreferrer">https://github.com/ei-shadi/zerospoil-server</a>
-
----
 
 <h2 align="center">⚙️ API Endpoints (Express + MongoDB + Firebase Auth)</h2>
 
