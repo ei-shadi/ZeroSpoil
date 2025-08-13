@@ -64,6 +64,10 @@
     <td>Authentication & Backend</td>
   </tr>
   <tr>
+    <td>🗃️ <strong>TanStack Query</strong></td>
+    <td>Data Fetching & State Management (React Query)</td>
+  </tr>
+  <tr>
     <td>🌶 <strong>React Hot Toast</strong></td>
     <td>Toast Notifications</td>
   </tr>
