@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import axios from "axios";
 import Modal from "../Utilities/Modal";
@@ -6,65 +6,101 @@ import UpdateForm from "../Utilities/UpdateForm";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
-import { HiOutlineClipboardDocumentList, HiOutlineExclamationCircle } from "react-icons/hi2";
+import {
+  HiOutlineClipboardDocumentList,
+  HiOutlineExclamationCircle,
+} from "react-icons/hi2";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import Loader from "../Utilities/Loader";
+
+const fetchItems = async ({ queryKey }) => {
+  const [_key, email, token] = queryKey;
+  const res = await axios.get(
+    `${import.meta.env.VITE_API_URL}/food-data-by-email/${email}`,
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
+  return res.data;
+};
 
 const MyItems = () => {
-  const [items, setItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const [isUpdateModalOpen, setUpdateModalOpen] = useState(false);
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
 
   const { user } = useContext(AuthContext);
+  const queryClient = useQueryClient();
 
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_API_URL}/food-data-by-email/${user?.email}`, {
-        headers: {
-          Authorization: `Bearer ${user?.accessToken}`,
-        },
-      })
-      .then(res => setItems(res.data))
-      .catch(err => console.error("Error fetching items:", err));
-  }, [user]);
+  // Fetch with React Query
+  const {
+    data: items = [],
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["myItems", user?.email, user?.accessToken],
+    queryFn: fetchItems,
+    enabled: !!user?.email && !!user?.accessToken,
+  });
 
-  // Handle Delete
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/foods-data/${id}`, {
-        headers: {
-          Authorization: `Bearer ${user?.accessToken}`,
-        },
-      });
-      setItems(prev => prev.filter(item => item._id !== id));
+  // Delete Mutation
+  const deleteMutation = useMutation({
+    mutationFn: async (id) => {
+      return axios.delete(
+        `${import.meta.env.VITE_API_URL}/foods-data/${id}`,
+        {
+          headers: { Authorization: `Bearer ${user?.accessToken}` },
+        }
+      );
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["myItems", user?.email, user?.accessToken]);
       setDeleteModalOpen(false);
       Swal.fire("Deleted!", "Your item has been deleted.", "success");
-    } catch (err) {
-      console.error("Delete failed:", err);
+    },
+    onError: () => {
       Swal.fire("Error", "Failed to delete the item.", "error");
-    }
-  };
-  // Handle Update
-  const handleUpdate = async (updatedItem) => {
-    try {
-      await axios.put(`${import.meta.env.VITE_API_URL}/foods-data/${updatedItem._id}`, updatedItem);
-      setItems(prev =>
-        prev.map(item => (item._id === updatedItem._id ? updatedItem : item))
+    },
+  });
+
+  // Update Mutation
+  const updateMutation = useMutation({
+    mutationFn: async (updatedItem) => {
+      return axios.put(
+        `${import.meta.env.VITE_API_URL}/foods-data/${updatedItem._id}`,
+        updatedItem
       );
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["myItems", user?.email, user?.accessToken]);
       setUpdateModalOpen(false);
       Swal.fire("Updated!", "Your item has been updated.", "success");
-    } catch (err) {
-      console.error("Update failed:", err);
+    },
+    onError: () => {
       Swal.fire("Error", "Failed to update the item.", "error");
-    }
-  };
+    },
+  });
+
+  // UI states
+  if (isLoading) {
+    return <Loader/>
+  }
+
+  if (isError) {
+    return (
+      <div className="w-11/12 md:w-9/12 mx-auto text-center py-20">
+        <p className="text-2xl text-red-500 font-bold">Error loading items.</p>
+      </div>
+    );
+  }
 
   return (
     <>
       <Helmet>
         <title>My Items - ZeroSpoil</title>
       </Helmet>
-      <div className="w-11/12 md:w-9/12 mx-auto py-24 md:py-32">
-        <h2 className="text-5xl w-80 md:w-full mx-auto md:text-6xl text-center my-10 text-color">
+      <div className="w-11/12 md:w-9/12 mx-auto mt-10 md:mt-20">
+        <h2 className="text-5xl w-80 md:w-full mx-auto md:text-6xl text-center mb-10 text-color">
           <span className="text-[#a05cff] italic pr-4">My Food</span>
           Items
           <HiOutlineClipboardDocumentList className="inline ml-2 text-[#8338EC]" />
@@ -97,7 +133,6 @@ const MyItems = () => {
                         >
                           <FaEdit />
                         </button>
-
                         <button
                           onClick={() => {
                             setSelectedItem(item);
@@ -127,7 +162,7 @@ const MyItems = () => {
             <Modal onClose={() => setUpdateModalOpen(false)}>
               <UpdateForm
                 item={selectedItem}
-                onSubmit={handleUpdate}
+                onSubmit={(updatedItem) => updateMutation.mutate(updatedItem)}
                 onClose={() => setUpdateModalOpen(false)}
               />
             </Modal>
@@ -141,7 +176,7 @@ const MyItems = () => {
                   Are you sure you want to delete this item?
                 </h2>
                 <button
-                  onClick={() => handleDelete(selectedItem._id)}
+                  onClick={() => deleteMutation.mutate(selectedItem._id)}
                   className="bg-red-600 text-white px-4 py-2 rounded mr-2 hover:cursor-pointer hover:bg-[#8338ec] hover:text-white transition duration-300 hover:scale-110"
                 >
                   Yes, Delete

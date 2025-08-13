@@ -67,7 +67,7 @@ const AddFoodForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex py-20 items-center justify-center ">
+    <div className="flex items-center justify-center mt-10 mb-20 md:mt-20 md:mb-28">
       <div className="bg-white rounded-2xl shadow-xl p-8 w-[90%] max-w-xl">
         <h2 className="text-3xl font-bold text-center text-[#00D3F2] mb-6">Add New Food</h2>
         <form onSubmit={handleSubmit} className="space-y-4">

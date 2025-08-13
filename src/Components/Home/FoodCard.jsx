@@ -31,7 +31,7 @@ const FoodCard = () => {
     );
 
   return (
-    <section className="px-4 mx-auto sm:max-w-xl md:max-w-7xl lg:max-w-screen-xl md:px-10 lg:px-8 my-16">
+    <section className="px-4 mx-auto sm:max-w-xl md:max-w-7xl lg:max-w-screen-xl md:px-10 lg:px-8">
       {/* Title & Description */}
       <div className="text-center">
         <h1 className="text-4xl md:text-6xl leading-tight md:leading-snug font-bold max-w-xl lg:max-w-4xl mx-auto">
@@ -51,7 +51,7 @@ const FoodCard = () => {
             const expiry = new Date(expiryDate);
             const today = new Date();
             const nearlyExpiryThreshold = new Date();
-            nearlyExpiryThreshold.setDate(today.getDate() + 5);
+            nearlyExpiryThreshold.setDate(today.getDate() + 6);
 
             const formattedExpiryDate = expiry.toLocaleDateString(undefined, {
               year: "numeric",
@@ -65,8 +65,8 @@ const FoodCard = () => {
             return (
               <div
                 key={_id}
-                className="flex flex-col bg-white rounded-xl shadow-lg w-full max-w-xs overflow-hidden ring-1 ring-gray-200
-                  transition-transform duration-300 hover:scale-[1.05] hover:shadow-2xl group"
+                className="flex flex-col bg-white rounded-xl shadow-lg w-full max-w-xs overflow-hidden mx-auto
+                  ring-1 ring-gray-200 transition-transform duration-300 hover:scale-[1.05] hover:shadow-2xl group"
               >
                 {/* Image */}
                 <div className="relative overflow-hidden h-56">
@@ -79,16 +79,11 @@ const FoodCard = () => {
                   {(isExpired || isNearlyExpired) && (
                     <div
                       className={`absolute top-3 right-3 px-3 py-1 rounded-full font-semibold text-xs uppercase tracking-wide select-none
-                        ${
-                          isExpired
-                            ? "bg-red-600 text-white shadow-lg animate-pulse"
-                            : "bg-yellow-400 text-black shadow-lg animate-pulse"
+                        ${isExpired
+                          ? "bg-red-600 text-white shadow-lg animate-pulse"
+                          : "bg-yellow-400 text-black shadow-lg animate-pulse"
                         }`}
-                      title={
-                        isExpired
-                          ? "This item has expired"
-                          : "This item will expire soon"
-                      }
+                      title={isExpired ? "This item has expired" : "This item will expire soon"}
                     >
                       {isExpired ? "Expired" : "Nearly Expired"}
                     </div>
@@ -96,35 +91,32 @@ const FoodCard = () => {
                 </div>
 
                 {/* Card Content */}
-                <div className="flex flex-col flex-1 px-6 py-5 text-gray-900">
+                <div className="flex flex-col flex-1 px-4 py-5 text-gray-900">
+                  {/* Title */}
                   <h3
-                    className="text-2xl font-extrabold mb-3 leading-snug line-clamp-2 text-center"
+                    className="text-2xl font-extrabold mb-4 leading-snug line-clamp-2 text-center border-4 border-cyan-500 rounded-full bg-yellow-100 text-black py-1"
                     title={title}
                   >
                     {title}
                   </h3>
 
+                  {/* Info Section */}
                   <div className="flex justify-between text-gray-700 text-sm mb-6">
                     <div className="space-y-1">
-                      <p>
-                        <span className="font-medium text-gray-900">
-                          Category:
-                        </span>{" "}
-                        {category}
+                      <p className="font-semibold text-base">
+                        Category: <span className="text-green-600">{category}</span>
                       </p>
-                      <p>
-                        <span className="font-medium text-gray-900">
-                          Quantity:
-                        </span>{" "}
-                        {quantity}
+                      <p className="font-semibold text-base">
+                        Quantity: <span className="text-green-600">{quantity}</span>
                       </p>
                     </div>
                     <div className="text-right space-y-1">
-                      <p className="font-medium text-gray-900">Expires:</p>
-                      <p>{formattedExpiryDate}</p>
+                      <p className="font-semibold text-base">Expires:</p>
+                      <p className="font-semibold text-red-600 text-base">{formattedExpiryDate}</p>
                     </div>
                   </div>
 
+                  {/* Button */}
                   <div className="mt-auto flex justify-center">
                     <Link to={`/food-details/${_id}`}>
                       <Button name="See Details" />

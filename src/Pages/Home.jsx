@@ -17,22 +17,22 @@ const Home = () => {
       </Helmet>
 
       {/* Slider Section */}
-      <section className="mb-28 md:mb-36">
+      <section className="mb-20 md:mb-32">
         <Slider />
       </section>
 
       {/* Upcoming Expiry Food Card Section */}
-      <section className="mb-28 md:mb-36">
+      <section className="mb-20 md:mb-32">
         <FoodCard />
       </section>
 
       {/* Expired Food Section */}
-      <section className="mb-28 md:mb-36">
+      <section className="mb-20 md:mb-32">
         <ExpiredFood />
       </section>
 
       {/* Donate Food Section */}
-      <section className=" mb-28 md:mb-36">
+      <section className="mb-20 md:mb-32">
         <div>
           <h1 className="text-4xl md:text-6xl text-center leading-11 md:leading-18 lg:leading-0">
             <span className="text-[#a05cff] italic pr-1">Donate</span> Food
@@ -45,17 +45,17 @@ const Home = () => {
       </section>
 
       {/* Food Waste Insights */}
-      <section className="mb-28 md:mb-36">
+      <section className="mb-20 md:mb-32">
         <FoodWasteInsights />
       </section>
 
       {/* Tips For Foods Section */}
-      <section className="w-11/12 lg:w-7/12 mx-auto mb-28 md:mb-36">
+      <section className="px-4 mx-auto sm:max-w-xl md:max-w-7xl lg:max-w-screen-xl md:px-10 lg:px-8 mb-20 md:mb-32">
         <FreshFoodTips />
       </section>
 
       {/* Client Review */}
-      <div className="mb-18 md:mb-28">
+      <div className="mb-20 md:mb-32">
         <ClientReview />
       </div>
     </>

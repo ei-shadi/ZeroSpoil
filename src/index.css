@@ -19,7 +19,7 @@ button,
 [data-theme="light"] {
 
   body {
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(211, 211, 211);
   }
 
   .center-bg{
@@ -36,6 +36,11 @@ button,
   }
 
   .des-color{
+    color: black;
+  }
+
+  .box-bg{
+    background-color: white;
     color: black;
   }
 }
@@ -55,6 +60,11 @@ button,
   }
   .des-color{
     color: rgb(0, 255, 255);
+  }
+  
+  .box-bg{
+    background-color: black;
+    color: white;
   }
 }
 

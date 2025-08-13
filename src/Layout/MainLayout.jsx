@@ -11,11 +11,11 @@ const MainLayout = () => {
     <div>
       <ScrollToTop />
       
-      <header >
+      <header className="h-[104px]">
         <Navbar />
       </header>
 
-      <main className="min-h-screen">
+      <main >
         <Outlet />
       </main>
 

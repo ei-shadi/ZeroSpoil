@@ -57,7 +57,7 @@ const FreshFoodTips = () => {
           <span className="text-[#a05cff] italic pl-2">Food Fresh</span>
           <HiOutlineClipboardDocumentList className="inline ml-3 text-[#8338EC]" />
         </h2>
-        <p className="text-base des-color text-center md:text-lg font-semibold opacity-70">
+        <p className="text-lg md:text-xl des-color text-center font-semibold opacity-70">
           Keep your food fresher for longer with smart storage! Learn simple tips tailored to each item—whether it's milk, meat, or veggies—to reduce waste and enjoy better taste every day.
         </p>
       </div>

@@ -147,13 +147,13 @@ export default function ClientReviewCarousel() {
     <section
       aria-roledescription="carousel"
       aria-label="Client Reviews"
-      className="w-full py-12 md:py-20 flex flex-col items-center justify-center"
+      className="w-full flex flex-col items-center justify-center"
     >
       <div className="w-full">
         <header className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight px-5 w-[90%] sm:w-[600px] lg:w-full mx-auto">
             What
-            <span className="text-[#a05cff] italic px-3">Our Clients'</span> Say
+            <span className="text-[#a05cff] italic px-3">Our Client's</span> Say
             <HiOutlineClipboardDocumentList className="inline ml-2 text-[#8338EC]" />
           </h1>
           <p className="text-lg md:text-xl text-center des-color mx-auto mt-2 md:mt-6 max-w-4xl px-6 sm:px-10 mb-10 md:mb-14 font-semibold opacity-70">

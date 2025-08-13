@@ -84,12 +84,12 @@ const Fridge = () => {
     );
 
   return (
-    <section className="lg:w-9/12 mx-auto px-4 pt-18 md:pt-24">
+    <section className="px-4 mx-auto sm:max-w-xl md:max-w-2xl lg:max-w-9/12 mt-10 md:mt-20">
       <Helmet>
         <title>Fridge - ZeroSpoil</title>
       </Helmet>
 
-      <h1 className="text-5xl w-3/4 mx-auto md:text-6xl text-center mb-10 md:mb-14 mt-20">
+      <h1 className="text-5xl w-3/4 mx-auto md:text-6xl text-center mb-10 md:mb-14">
         <span className="text-[#a05cff] italic pr-4">All</span>
         Items
         <HiOutlineClipboardDocumentList className="inline ml-2 text-[#8338EC]" />
@@ -97,23 +97,23 @@ const Fridge = () => {
 
       <div className="flex justify-center gap-10 mb-8">
         <div className="bg-red-100 text-red-700 px-6 py-3 rounded shadow text-center">
-          <p className="font-bold text-xl">Expired Items</p>
+          <p className="font-bold text-lg md:text-xl">Expired Items</p>
           <CountUp
             start={0}
             end={expiredCount}
             duration={1.5}
             separator=","
-            className="text-3xl font-bold"
+            className="text-2xl md:text-3xl font-bold text-black"
           />
         </div>
         <div className="bg-yellow-100 text-yellow-800 px-6 py-3 rounded shadow text-center">
-          <p className="font-bold text-xl">Nearly Expired Items</p>
+          <p className="font-bold text-lg md:text-xl">Nearly Expired Items</p>
           <CountUp
             start={0}
             end={nearlyExpiredCount}
             duration={1.5}
             separator=","
-            className="text-3xl font-bold"
+            className="text-2xl md:text-3xl font-bold text-black"
           />
         </div>
       </div>
@@ -125,7 +125,7 @@ const Fridge = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onKeyDown={handleSearchKeyDown}
-          className="border rounded px-4 py-2 w-full md:w-1/2"
+          className="border-2 border-amber-500 rounded px-4 py-2 w-[80%] md:w-1/3 box-bg"
         />
         <select
           value={selectedCategory}
@@ -133,7 +133,7 @@ const Fridge = () => {
             setSelectedCategory(e.target.value);
             setCurrentPage(1);
           }}
-          className="border rounded px-4 py-2 w-full md:w-1/3"
+          className="border-cyan-500 border-2 rounded px-4 py-2 w-[80%] md:w-1/3 box-bg"
         >
           <option value="">All Categories</option>
           <option value="Dairy">Dairy</option>
@@ -148,7 +148,7 @@ const Fridge = () => {
         </select>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-center mb-10">
         {foodsData.map((foodData) => (
           <FridgeCard key={foodData._id} foodData={foodData} />
         ))}
@@ -168,10 +168,9 @@ const Fridge = () => {
             }}
             disabled={currentPage === 1}
             className={`px-4 py-2 rounded-md border transition 
-              ${
-                currentPage === 1
-                  ? "cursor-not-allowed border-gray-300 text-gray-400 bg-gray-100"
-                  : "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
+              ${currentPage === 1
+                ? "cursor-not-allowed border-gray-300 text-gray-400 bg-gray-100"
+                : "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
               }`}
             aria-label="Previous Page"
           >
@@ -186,10 +185,9 @@ const Fridge = () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
               className={`px-4 py-2 rounded-md border transition
-                ${
-                  currentPage === i + 1
-                    ? "bg-purple-600 text-white border-purple-600 cursor-pointer"
-                    : "border-purple-600 text-xl text-gray-700 hover:bg-purple-600 hover:text-white cursor-pointer"
+                ${currentPage === i + 1
+                  ? "bg-purple-600 text-white border-purple-600 cursor-pointer"
+                  : "border-purple-600 text-xl text-gray-700 hover:bg-purple-600 hover:text-white cursor-pointer"
                 }`}
               aria-current={currentPage === i + 1 ? "page" : undefined}
             >
@@ -205,10 +203,9 @@ const Fridge = () => {
             }}
             disabled={currentPage === totalPages}
             className={`px-4 py-2 rounded-md border transition
-              ${
-                currentPage === totalPages
-                  ? "cursor-not-allowed border-gray-300 text-gray-400 bg-gray-100"
-                  : "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white cursor-pointer"
+              ${currentPage === totalPages
+                ? "cursor-not-allowed border-gray-300 text-gray-400 bg-gray-100"
+                : "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white cursor-pointer"
               }`}
             aria-label="Next Page"
           >

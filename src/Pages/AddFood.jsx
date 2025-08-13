@@ -8,7 +8,7 @@ const AddFood = () => {
       <Helmet>
         <title>Add Food - ZeroSpoil</title>
       </Helmet>
-      <section className=" pt-12 md:pt-20">
+      <section >
         <AddFoodForm />
       </section>
     </>

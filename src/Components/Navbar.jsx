@@ -66,7 +66,7 @@ const Navbar = () => {
   // Center Links for large device
   const centerLinks = (
     <div className="lg:flex hidden nav-links-bg">
-      <ul className="items-center hidden space-x-10 lg:flex center-bg rounded-full px-8 py-4">
+      <ul className="items-center hidden space-x-10 lg:flex center-bg rounded-full px-6 py-3">
         {[
           { to: "/", title: "Home", icon: FaHome },
           { to: "/fridge", title: "Fridge", icon: FaSnowflake },
@@ -82,7 +82,7 @@ const Navbar = () => {
                 title={title}
                 className={({ isActive }) =>
                   `flex items-center gap-2 ${isActive
-                    ? "text-2xl font-extrabold bg-[#8338ec] rounded-full text-[#ffd102] px-5 py-1"
+                    ? "text-2xl font-extrabold bg-[#8338ec] rounded-full text-[#ffd102] px-6 py-1"
                     : "text-xl italic font-bold hover:text-cyan-400 hover:scale-130 duration-300 ease-in-out"
                   }`
                 }
@@ -109,9 +109,9 @@ const Navbar = () => {
       {[
         { path: "/", title: "Home", icon: <FaHome /> },
         { path: "/fridge", title: "Fridge", icon: <FaSnowflake /> },
-        { path: "/faq", title: "FAQ", icon: <FaQuestionCircle /> },
         user && { path: "/add-food", title: "Add Food", icon: <FaPlus /> },
         user && { path: "/my-items", title: "My Items", icon: <FaClipboardList /> },
+        { path: "/faq", title: "FAQ", icon: <FaQuestionCircle /> },
         user
           ? {
               path: "#",
@@ -142,10 +142,10 @@ const Navbar = () => {
               }}
               className={({ isActive }) =>
                 `flex items-center gap-2 justify-center ${action
-                  ? "italic font-semibold text-cyan-400 text-2xl rounded-xl py-2 bg-[#3d405b] mx-auto"
+                  ? "italic font-semibold text-white text-2xl rounded-xl py-2 bg-red-600 mx-auto w-4/5"
                   : isActive
-                  ? "text-2xl font-extrabold bg-[#8338ec] text-white py-2 rounded-2xl w-3/5 mx-auto"
-                  : "italic font-semibold text-cyan-400 text-2xl rounded-xl py-2 bg-[#3d405b] w-4/5 mx-auto"
+                  ? "text-xl font-extrabold bg-[#8338ec] text-white py-2 rounded-2xl w-2/5 mx-auto"
+                  : "italic font-semibold text-cyan-400 text-xl rounded-xl py-2 bg-[#3d405b] w-4/5 mx-auto"
                 }`
               }
             >
@@ -245,7 +245,7 @@ const Navbar = () => {
               className="p-2 transition rounded "
               onClick={() => setIsMenuOpen((prev) => !prev)}
             >
-              <svg className="w-7 text-white" viewBox="0 0 24 24">
+              <svg className="w-7 text-color" viewBox="0 0 24 24">
                 <path
                   fill="currentColor"
                   d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
@@ -263,7 +263,7 @@ const Navbar = () => {
 
             {isMenuOpen && (
               <motion.div
-                className="absolute top-20 left-0 w-full z-50 rounded-2xl bg-amber-100"
+                className="absolute top-20 left-0 w-full z-50 rounded-2xl center-bg"
                 ref={menuRef}
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -300,7 +300,7 @@ const Navbar = () => {
                           alt="User Avatar"
                           className="w-16 h-16 object-cover rounded-full border-2 border-green-500"
                         />
-                        <p className="font-semibold text-2xl">
+                        <p className="font-bold text-2xl text-black">
                           {user?.displayName || user?.email}
                         </p>
                       </div>

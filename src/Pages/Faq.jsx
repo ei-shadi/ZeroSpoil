@@ -63,7 +63,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-36 px-4 md:px-8 lg:px-16">
+    <section className="pb-20 px-4 md:px-8 lg:px-16 mt-10 md:mt-20">
       <h2 className="max-w-4xl mx-auto text-center mb-12 text-4xl md:text-5xl font-semibold w-3/4">
         <span className="text-[#a05cff] italic pr-3">
           Frequently
