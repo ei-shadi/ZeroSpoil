@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import axios from "axios";
-import Modal from "../Utilities/Modal";
-import UpdateForm from "../Utilities/UpdateForm";
+import Modal from "../Shared/Modal";
+import UpdateForm from "../Shared/UpdateForm";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
@@ -11,7 +11,7 @@ import {
   HiOutlineExclamationCircle,
 } from "react-icons/hi2";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import Loader from "../Utilities/Loader";
+import Loader from "../Shared/Loader";
 
 const fetchItems = async ({ queryKey }) => {
   const [_key, email, token] = queryKey;

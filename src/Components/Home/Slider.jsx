@@ -3,7 +3,7 @@ import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
-import Button from '../../Utilities/Btn';
+import Button from '../../Shared/Btn';
 import { Link } from 'react-router';
 
 const slides = [

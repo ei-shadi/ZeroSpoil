@@ -1,11 +1,11 @@
 import { Helmet } from "react-helmet-async";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FridgeCard from "../Components/FridgeCard";
-import Loader from "../Utilities/Loader";
+import SkeletonCard from "../Shared/SkeletonCard";
 import axios from "axios";
 import CountUp from "react-countup";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 const itemsPerPage = 8;
 
@@ -26,24 +26,33 @@ const fetchFoodsData = async ({ queryKey }) => {
 };
 
 const Fridge = () => {
+  const queryClient = useQueryClient();
   const [searchTerm, setSearchTerm] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
-  const {
-    data,
-    isLoading,
-    isError,
-    error,
-    isFetching,
-  } = useQuery({
-    queryKey: [
-      "foodsData",
-      { searchQuery, selectedCategory, currentPage },
-    ],
+  // Debounced search
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSearchQuery(searchTerm.trim());
+      setCurrentPage(1);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [searchTerm]);
+
+  const { data, isLoading, isError, error, isFetching } = useQuery({
+    queryKey: ["foodsData", { searchQuery, selectedCategory, currentPage }],
     queryFn: fetchFoodsData,
     keepPreviousData: true,
+    onSuccess: (data) => {
+      if (currentPage < data.totalPages) {
+        queryClient.prefetchQuery(
+          ["foodsData", { searchQuery, selectedCategory, currentPage: currentPage + 1 }],
+          fetchFoodsData
+        );
+      }
+    },
   });
 
   const foodsData = data?.foods || [];
@@ -56,26 +65,12 @@ const Fridge = () => {
   let expiredCount = 0;
   let nearlyExpiredCount = 0;
 
-  if (Array.isArray(foodsData)) {
-    foodsData.forEach((food) => {
-      const expiryDate = new Date(food.expiryDate);
-      if (expiryDate < today) {
-        expiredCount++;
-      } else if (expiryDate >= today && expiryDate <= fiveDaysFromNow) {
-        nearlyExpiredCount++;
-      }
-    });
-  }
+  foodsData.forEach((food) => {
+    const expiryDate = new Date(food.expiryDate);
+    if (expiryDate < today) expiredCount++;
+    else if (expiryDate <= fiveDaysFromNow) nearlyExpiredCount++;
+  });
 
-  const handleSearchKeyDown = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      setSearchQuery(searchTerm.trim());
-      setCurrentPage(1);
-    }
-  };
-
-  if (isLoading) return <Loader />;
   if (isError)
     return (
       <div className="text-center text-red-500">
@@ -95,6 +90,7 @@ const Fridge = () => {
         <HiOutlineClipboardDocumentList className="inline ml-2 text-[#8338EC]" />
       </h1>
 
+      {/* Counters */}
       <div className="flex justify-center gap-10 mb-8">
         <div className="bg-red-100 text-red-700 px-6 py-3 rounded shadow text-center">
           <p className="font-bold text-lg md:text-xl">Expired Items</p>
@@ -118,13 +114,13 @@ const Fridge = () => {
         </div>
       </div>
 
+      {/* Search & Filter */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
         <input
           type="text"
           placeholder="Search foods..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          onKeyDown={handleSearchKeyDown}
           className="border-2 border-amber-500 rounded px-4 py-2 w-[80%] md:w-1/3 box-bg"
         />
         <select
@@ -148,18 +144,16 @@ const Fridge = () => {
         </select>
       </div>
 
+      {/* Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-center mb-10">
-        {foodsData.map((foodData) => (
-          <FridgeCard key={foodData._id} foodData={foodData} />
-        ))}
+        {isLoading
+          ? Array.from({ length: itemsPerPage }).map((_, idx) => <SkeletonCard key={idx} />)
+          : foodsData.map((foodData) => <FridgeCard key={foodData._id} foodData={foodData} />)}
       </div>
 
-      {/* Modern Pagination with scroll-to-top */}
+      {/* Pagination */}
       {totalPages > 1 && (
-        <nav
-          aria-label="Page navigation"
-          className="flex justify-center mb-20 space-x-2"
-        >
+        <nav aria-label="Page navigation" className="flex justify-center mb-20 space-x-2">
           <button
             onClick={() => {
               const newPage = Math.max(currentPage - 1, 1);
@@ -172,7 +166,6 @@ const Fridge = () => {
                 ? "cursor-not-allowed border-gray-300 text-gray-400 bg-gray-100"
                 : "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
               }`}
-            aria-label="Previous Page"
           >
             Prev
           </button>
@@ -189,7 +182,6 @@ const Fridge = () => {
                   ? "bg-purple-600 text-white border-purple-600 cursor-pointer"
                   : "border-purple-600 text-xl text-gray-700 hover:bg-purple-600 hover:text-white cursor-pointer"
                 }`}
-              aria-current={currentPage === i + 1 ? "page" : undefined}
             >
               {i + 1}
             </button>
@@ -207,16 +199,14 @@ const Fridge = () => {
                 ? "cursor-not-allowed border-gray-300 text-gray-400 bg-gray-100"
                 : "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white cursor-pointer"
               }`}
-            aria-label="Next Page"
           >
             Next
           </button>
         </nav>
       )}
+
       {isFetching && (
-        <div className="text-center text-sm text-gray-500 mb-6">
-          Updating...
-        </div>
+        <div className="text-center text-sm text-gray-500 mb-6">Updating...</div>
       )}
     </section>
   );

@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import ScrollToTop from "../Utilities/ScrollToTop";
+import ScrollToTop from "../Shared/ScrollToTop";
 
 
 const MainLayout = () => {
@@ -10,12 +10,12 @@ const MainLayout = () => {
   return (
     <div>
       <ScrollToTop />
-      
+
       <header className="h-[104px]">
         <Navbar />
       </header>
 
-      <main >
+      <main className="min-h-screen">
         <Outlet />
       </main>
 

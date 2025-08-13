@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import logo from "../assets/Logo.png";
-import SocialBTN from "../Utilities/SocialBTN";
+import SocialBTN from "../Shared/SocialBTN";
 
 
 

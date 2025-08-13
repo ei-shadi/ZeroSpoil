@@ -2,27 +2,17 @@ import React from "react";
 import { Link } from "react-router";
 import Button from "../Shared/Btn";
 
-const FridgeCard = React.memo(({ foodData }) => {
-  const { title, category, quantity, expiryDate, image, _id } = foodData;
-
+const FoodItemCard = React.memo(({ title, category, quantity, expiryDate, image, link, badge }) => {
   const expiry = new Date(expiryDate);
-  const today = new Date();
-  const nearlyExpiryThreshold = new Date();
-  nearlyExpiryThreshold.setDate(today.getDate() + 6);
-
   const formattedExpiryDate = expiry.toLocaleDateString(undefined, {
     year: "numeric",
     month: "short",
     day: "numeric",
   });
 
-  const isExpired = expiry < today;
-  const isNearlyExpired = !isExpired && expiry <= nearlyExpiryThreshold;
-
   return (
     <div
-      className="flex flex-col bg-white rounded-xl shadow-md w-full max-w-xs overflow-hidden mx-auto
-                 ring-1 ring-gray-200 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg group"
+      className="flex flex-col bg-white rounded-xl shadow-md w-full max-w-xs overflow-hidden mx-auto ring-1 ring-gray-200 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg group"
     >
       {/* Image */}
       <div className="relative overflow-hidden h-56">
@@ -33,14 +23,13 @@ const FridgeCard = React.memo(({ foodData }) => {
           className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
         />
 
-        {(isExpired || isNearlyExpired) && (
+        {badge && (
           <div
             className={`absolute top-3 right-3 px-3 py-1 rounded-full font-semibold text-xs uppercase tracking-wide select-none
-                        ${isExpired ? "bg-red-600 text-white" : "bg-yellow-400 text-black"}
-                        shadow-sm transition-all duration-300`}
-            title={isExpired ? "This item has expired" : "This item will expire soon"}
+                        ${badge.color} shadow-sm transition-all duration-300`}
+            title={badge.text}
           >
-            {isExpired ? "Expired" : "Nearly Expired"}
+            {badge.text}
           </div>
         )}
       </div>
@@ -70,7 +59,7 @@ const FridgeCard = React.memo(({ foodData }) => {
         </div>
 
         <div className="mt-auto flex justify-center">
-          <Link to={`/food-details/${_id}`}>
+          <Link to={link}>
             <Button name="See Details" />
           </Link>
         </div>
@@ -79,4 +68,4 @@ const FridgeCard = React.memo(({ foodData }) => {
   );
 });
 
-export default FridgeCard;
+export default FoodItemCard;

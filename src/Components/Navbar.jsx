@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
 import logo from "../assets/Logo.png";
 import { Link, NavLink, useNavigate } from "react-router";
-import Btn from "../Utilities/Btn";
+import Btn from "../Shared/Btn";
 import {
   FaHome,
   FaSnowflake,
@@ -12,7 +12,7 @@ import {
   FaUserPlus,
   FaQuestionCircle,
 } from "react-icons/fa";
-import ThemeBtn from "../Utilities/ThemeBtn";
+import ThemeBtn from "../Shared/ThemeBtn";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
@@ -114,19 +114,19 @@ const Navbar = () => {
         { path: "/faq", title: "FAQ", icon: <FaQuestionCircle /> },
         user
           ? {
-              path: "#",
-              title: "Logout",
-              icon: <FaSignInAlt />,
-              action: () => {
-                handleLogout();
-                setIsMenuOpen(false);
-              },
-            }
+            path: "#",
+            title: "Logout",
+            icon: <FaSignInAlt />,
+            action: () => {
+              handleLogout();
+              setIsMenuOpen(false);
+            },
+          }
           : {
-              path: "/auth/login",
-              title: "Login",
-              icon: <FaSignInAlt />,
-            }
+            path: "/auth/login",
+            title: "Login",
+            icon: <FaSignInAlt />,
+          }
       ]
         .filter(Boolean)
         .map(({ path, title, icon, action }) => (
@@ -144,8 +144,8 @@ const Navbar = () => {
                 `flex items-center gap-2 justify-center ${action
                   ? "italic font-semibold text-white text-2xl rounded-xl py-2 bg-red-600 mx-auto w-4/5"
                   : isActive
-                  ? "text-xl font-extrabold bg-[#8338ec] text-white py-2 rounded-2xl w-2/5 mx-auto"
-                  : "italic font-semibold text-cyan-400 text-xl rounded-xl py-2 bg-[#3d405b] w-4/5 mx-auto"
+                    ? "text-xl font-extrabold bg-[#8338ec] text-white py-2 rounded-2xl w-2/5 mx-auto"
+                    : "italic font-semibold text-cyan-400 text-xl rounded-xl py-2 bg-[#3d405b] w-4/5 mx-auto"
                 }`
               }
             >

@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { motion } from "framer-motion";
 import { FaRegSadTear } from "react-icons/fa";
-import Btn from "../Utilities/Btn";
+import Btn from "../Shared/Btn";
 import Lottie from "lottie-react";
 import ErrorAnimation from "../assets/Lottie/Error.json";
 

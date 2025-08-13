@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState, useContext, useCallback } from "react";
 import { useParams } from "react-router";
-import Loader from "../Utilities/Loader";
+import Loader from "../Shared/Loader";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
@@ -114,7 +114,7 @@ const FoodDetails = () => {
         <title>{title} - ZeroSpoil</title>
       </Helmet>
 
-      <div className="min-h-screen flex justify-center items-center text-white p-6 pb-28 pt-40">
+      <div className="min-h-screen flex justify-center items-center text-white p-6 pb-28 mt-10 lg:mt-20">
         <div className="w-full bg-gradient-to-t from-[#009CB3] to-black max-w-3xl bg-white/10 backdrop-blur-md border border-white/80 rounded-xl shadow-lg p-6">
           {/* Top: Image */}
           <div className="mb-6">

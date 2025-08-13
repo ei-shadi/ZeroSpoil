@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import Button from "../../Utilities/Btn";
+import Button from "../../Shared/Btn";
 
 const DonateFoodSection = () => {
   return (
@@ -8,7 +8,7 @@ const DonateFoodSection = () => {
     >
       <div className="absolute inset-0 bg-black/40"></div> {/* Overlay for readability */}
 
-      <div className="relative z-10 flex items-center justify-center px-5 py-14 md:py-24 text-center">
+      <div className="relative z-10 flex items-center justify-center px-5 py-16 md:py-28 lg:py-24 text-center">
         <div className="max-w-5xl mx-auto bg-black/60 py-10 px-5 md:px-10 rounded-2xl">
           <h2 className="text-4xl md:text-6xl font-bold mb-4 text-[#f4a261]">
             Share the Goodness, Donate Extra Food 🍲
@@ -16,8 +16,8 @@ const DonateFoodSection = () => {
           <p className="text-lg mb-6 text-white font-semibold">
             Donate food items that are close to expiry but still safe, connecting them to local food BANKS or NGOs.
           </p>
-          <Link 
-          to="https://www.foodbanking.org/" target="_blank">
+          <Link
+            to="https://www.foodbanking.org/" target="_blank">
             <Button name="Donate Now" />
           </Link>
         </div>

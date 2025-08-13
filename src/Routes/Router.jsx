@@ -6,7 +6,7 @@ import AddFood from "../Pages/AddFood";
 import MyItems from "../Pages/MyItems";
 import Login from "../Pages/Auth/LoginForm";
 import Register from "../Pages/Auth/RegisterForm";
-import Loader from "../Utilities/Loader";
+import Loader from "../Shared/Loader";
 import Error from "../Pages/Error";
 import PrivateRoute from "../Provider/PrivateRoute";
 import FoodDetails from "../Components/FoodDetails";
