@@ -2,7 +2,8 @@
 <div align="center">
   <h1>
     <a href="https://zerospoil.netlify.app/" target="_blank" rel="noopener noreferrer">
-      🕖 <strong>ZeroSpoil</strong>
+     <img src="https://i.ibb.co.com/RGsjYmD9/Logo.png" alt="EliteClub Logo" width="50" height="50" />
+      <strong>ZeroSpoil</strong>
     </a>
   </h1>
   <p><strong>Track your food. Waste less. Save more.</strong></p>
